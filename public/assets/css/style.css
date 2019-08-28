@@ -4,4 +4,32 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
+
+body {
+  position: relative;
+  font-size: 10px;
+  min-height: 100vh;
+  background-color: #181818;
+}
+
+/*************************************************************************************************************
+==================================   LANDING PAGE ============================================================
+***************************************************************************************************************/
+.waves .svg-wave {
+  position: absolute;
+}
+
+.waves #svg1 {
+  fill: rgba(68, 84, 204, 0.637);
+}
+
+.hero {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: red;
+  text-align: center;
+}
 /*# sourceMappingURL=style.css.map */
