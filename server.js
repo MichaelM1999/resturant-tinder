@@ -1,20 +1,20 @@
-var express = require("express");
-var path = require("path");
+const express = require("express");
+const path = require("path");
 const exphbs = require("express-handlebars");
 const mysql = require("mysql");
 
-var app = express();
-var PORT = 3000;
+const app = express();
+const PORT = process.env.PORT || 3000;
 
-app.use(express.static("public"));
-//put into public folder so that js and css all serve;
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
-app.set("view engine", "handlebars");
-
+app.use(express.static(__dirname + "/public/"));
 app.use(express.urlencoded({
   extended: true
 }));
 app.use(express.json());
+//put into public folder so that js and css all serve;
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
+
 //routes
 app.get("/", function (req, res) {
   res.render(path.join(__dirname, "/views/index.handlebars"));
