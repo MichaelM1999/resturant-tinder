@@ -13,6 +13,7 @@ body {
   min-height: 100vh;
   background-color: #181818;
   background-color: #e4dada;
+  overflow-x: hidden;
 }
 
 /*************************************************************************************************************
@@ -53,7 +54,7 @@ body {
 
 .hero {
   position: absolute;
-  top: 50%;
+  top: 60%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
@@ -65,6 +66,7 @@ body {
   font-weight: 400;
   font-size: 4.6rem;
   color: rgba(68, 84, 204, 0.8);
+  margin-bottom: -1rem;
 }
 
 .hero__subtitle {
@@ -74,15 +76,16 @@ body {
 }
 
 .hero__form {
-  max-width: 40rem;
+  max-width: 35rem;
+  height: 3.75rem;
   max-height: 10rem;
   margin: 3rem auto 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -92,9 +95,9 @@ body {
 }
 
 .hero__form--input, .hero__form--btn {
-  font-size: 2.15rem;
-  padding: .9rem 1.4rem;
+  font-size: 2.05rem;
   border: none;
+  padding: .95rem 1.4rem;
 }
 
 .hero__form--input:focus, .hero__form--btn:focus {
@@ -103,7 +106,7 @@ body {
 
 .hero__form--link {
   position: relative;
-  max-height: 10rem;
+  height: 3.75rem;
 }
 
 .hero__form--link .search-icon {
@@ -121,12 +124,15 @@ body {
 }
 
 .hero__form--input {
-  width: 100%;
   border-top-left-radius: 1rem;
   border-bottom-left-radius: 1rem;
   background-color: #f0f0f0;
   -webkit-transition: .5s all ease;
   transition: .5s all ease;
+  height: 100%;
+  -webkit-box-flex: 5;
+      -ms-flex-positive: 5;
+          flex-grow: 5;
 }
 
 .hero__form--input::-webkit-input-placeholder {
@@ -154,7 +160,6 @@ body {
 }
 
 .hero__form--btn {
-  margin-top: .25rem;
   background-color: #f0f0f0;
   border-top-right-radius: 1rem;
   border-bottom-right-radius: 1rem;
