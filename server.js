@@ -19,9 +19,21 @@ app.use(express.json());
 app.get("/", function (req, res) {
   res.render(path.join(__dirname, "/views/index.handlebars"));
 });
-// CODE HERE
+app.get("/about", function (req, res) {
+  res.render(path.join(__dirname, "/views/about.handlebars"));
+});
+app.get("/contact", function (req, res) {
+  res.render(path.join(__dirname, "/views/constact.handlebars"));
+});
+app.get("/api/:location", function (req, res) {
+  // res.render(path.join(__dirname, "/views/index.handlebars"));
+  //ajax call using req.params
+  //app.post to server from front end
+  //push to array 
+  // render using handle bars
+});
 
-
+//listening on ***
 app.listen(PORT, function() {
     // Log (server-side) when our server has started
     console.log("Server listening on: http://localhost:" + PORT);
