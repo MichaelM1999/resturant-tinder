@@ -1,5 +1,44 @@
+
+
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    font-size: 10px;
+    min-height: 100vh;
+    background-color: rgb(24, 24, 24);
+}
+
+/*************************************************************************************************************
+==================================   LANDING PAGE ============================================================
+***************************************************************************************************************/
+.waves {
+    .svg-wave {
+        position: absolute;
+    }
+
+    #svg1 {
+        fill: rgba(68, 84, 204, 0.637);
+    }
+}
+
+.hero {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: red;
+    text-align: center;
+    &__title {
+
+    }
+
+    &__subtitle {
+
+    }
 }
