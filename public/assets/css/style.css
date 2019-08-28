@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* Color Theme Swatches in Hex */
 * {
   margin: 0;
@@ -125,3 +126,52 @@ body {
   padding-left: 3.75rem;
 }
 /*# sourceMappingURL=style.css.map */
+=======
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  
+  body {
+    position: relative;
+    font-size: 10px;
+    min-height: 100vh;
+    background-color: #181818;
+  }
+  
+  /*************************************************************************************************************
+  ==================================   LANDING PAGE ============================================================
+  ***************************************************************************************************************/
+  .waves .svg-wave {
+    position: absolute;
+  }
+  
+  .waves #svg1 {
+    fill: rgba(68, 84, 204, 0.637);
+  }
+  
+  .hero {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    background-color: rgb(227, 219, 219);
+    text-align: center;
+  }
+  /*# sourceMappingURL=style.css.map */
+
+  h1{
+    background: url(https://media.giphy.com/media/l3vRbTrGdpZrjjco8/giphy.gif);
+    background-size: contain;
+    background-position: top left;
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 4rem;
+    font-weight: bold;
+    font-family: sans-serif;
+    outline-color: black;
+  }
+>>>>>>> css changes

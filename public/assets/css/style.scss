@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
 /* Color Theme Swatches in Hex */
 $brown: #544634;
 $orange: #FF3800;
@@ -6,13 +7,18 @@ $orange-comp: #40c3ff;
 $black: #19191F;
 $grey: #4A4A59;
 $white: #f0f0f0;
+=======
+>>>>>>> css changes
 
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+<<<<<<< HEAD
     font-family: brandon-grotesque, sans-serif;
+=======
+>>>>>>> css changes
 }
 
 body {
@@ -20,7 +26,10 @@ body {
     font-size: 10px;
     min-height: 100vh;
     background-color: rgb(24, 24, 24);
+<<<<<<< HEAD
     background-color: $white;
+=======
+>>>>>>> css changes
 }
 
 /*************************************************************************************************************
@@ -30,6 +39,13 @@ body {
     .svg-wave {
         position: absolute;
     }
+<<<<<<< HEAD
+=======
+
+    #svg1 {
+        fill: rgba(68, 84, 204, 0.637);
+    }
+>>>>>>> css changes
 }
 
 .hero {
@@ -37,6 +53,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
+<<<<<<< HEAD
     text-align: center;
     width: 100%;
 
@@ -111,4 +128,15 @@ body {
         }
     }
 
+=======
+    background-color: red;
+    text-align: center;
+    &__title {
+
+    }
+
+    &__subtitle {
+
+    }
+>>>>>>> css changes
 }
