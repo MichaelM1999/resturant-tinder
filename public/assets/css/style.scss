@@ -1,10 +1,18 @@
 
+/* Color Theme Swatches in Hex */
+$brown: #544634;
+$orange: #FF3800;
+$orange-comp: #40c3ff;
+$black: #19191F;
+$grey: #4A4A59;
+$white: #f0f0f0;
 
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: brandon-grotesque, sans-serif;
 }
 
 body {
@@ -12,6 +20,7 @@ body {
     font-size: 10px;
     min-height: 100vh;
     background-color: rgb(24, 24, 24);
+    background-color: $white;
 }
 
 /*************************************************************************************************************
@@ -21,10 +30,6 @@ body {
     .svg-wave {
         position: absolute;
     }
-
-    #svg1 {
-        fill: rgba(68, 84, 204, 0.637);
-    }
 }
 
 .hero {
@@ -32,13 +37,78 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    background-color: red;
     text-align: center;
-    &__title {
+    width: 100%;
 
+    &__title {
+        font-weight: 400;
+        font-size: 4.6rem;
+        color: #8f8f8f;
     }
 
     &__subtitle {
-
+        font-weight: 700;
+        font-size: 2.52rem;
+        color: rgba(68, 84, 204, 0.8);
     }
+
+    &__form {
+        max-width: 40rem;
+        max-height: 10rem;
+        margin: 3rem auto 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 1rem;
+        box-shadow: 0 0rem 3rem rgba($black, .1);
+
+        &--input,
+        &--btn {
+            font-size: 2.15rem;
+            padding: 1.2rem 1.4rem;
+            border: none;
+
+            &:focus {
+                outline: none;
+            }
+        }
+        
+        &--link {
+            position: relative;
+            max-height: 10rem;
+
+            .search-icon {
+                position: absolute;
+                z-index: 20;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                font-size: 2rem;
+                color: $white;
+            }
+        }
+
+        &--input {
+            width: 100%;
+            border-top-left-radius: 1rem;
+            border-bottom-left-radius: 1rem;
+
+            &::placeholder {
+                opacity: .5;
+                font-style: italic;
+            }
+        }
+
+        &--btn {
+            margin-top: .25rem;
+            background-color: $orange;
+            border-top-right-radius: 1rem;
+            border-bottom-right-radius: 1rem;
+            cursor: pointer;
+            font-weight: 700;
+            height: 100%;
+            padding-left: 3.75rem;
+        }
+    }
+
 }
