@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/MichaelM1999/resturant-tinder#readme",
   "dependencies": {
+    "@mdi/font": "^4.2.95",
     "dotenv": "^8.1.0",
     "express": "^4.17.1",
     "express-handlebars": "^3.1.0",
