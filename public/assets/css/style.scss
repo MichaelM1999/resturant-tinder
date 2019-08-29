@@ -1,5 +1,5 @@
 
-<<<<<<< HEAD
+
 /* Color Theme Swatches in Hex */
 $brown: #544634;
 $orange: #FF3800;
@@ -7,18 +7,13 @@ $orange-comp: #40c3ff;
 $black: #19191F;
 $grey: #4A4A59;
 $white: #f0f0f0;
-=======
->>>>>>> css changes
 
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-<<<<<<< HEAD
     font-family: brandon-grotesque, sans-serif;
-=======
->>>>>>> css changes
 }
 
 body {
@@ -26,64 +21,87 @@ body {
     font-size: 10px;
     min-height: 100vh;
     background-color: rgb(24, 24, 24);
-<<<<<<< HEAD
-    background-color: $white;
-=======
->>>>>>> css changes
+    background-color: rgb(228, 218, 218);
+    overflow-x: hidden;
 }
 
 /*************************************************************************************************************
 ==================================   LANDING PAGE ============================================================
 ***************************************************************************************************************/
+
 .waves {
     .svg-wave {
         position: absolute;
     }
-<<<<<<< HEAD
-=======
+}
 
-    #svg1 {
-        fill: rgba(68, 84, 204, 0.637);
+.logo {
+    font-size: 3.8rem;
+    color: $white;
+
+
+    &-container {
+        position: absolute;
+        z-index: 100;
+        min-width: 15rem;
+        top: 1.5rem;
+        left: 2.5rem;
     }
->>>>>>> css changes
+
+    .orange-text {
+        position: relative;
+        color: $orange;
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: .25rem;
+            top: .25rem;
+            z-index: -1;
+            background-color: $white;
+            width: 95%;
+            height: 80%;
+        }
+    }
 }
 
 .hero {
     position: absolute;
-    top: 50%;
+    top: 60%;
     left: 50%;
     transform: translate(-50%,-50%);
-<<<<<<< HEAD
     text-align: center;
     width: 100%;
 
     &__title {
         font-weight: 400;
         font-size: 4.6rem;
-        color: #8f8f8f;
+        color: rgba(68, 84, 204, 0.8);
+        margin-bottom: -1rem;
     }
 
     &__subtitle {
         font-weight: 700;
         font-size: 2.52rem;
-        color: rgba(68, 84, 204, 0.8);
+        color: #8f8f8f;
     }
 
     &__form {
-        max-width: 40rem;
+        max-width: 35rem;
+        height: 3.75rem;
         max-height: 10rem;
         margin: 3rem auto 0;
         display: flex;
-        align-items: center;
+        align-items: flex-end;
         justify-content: center;
         border-radius: 1rem;
         box-shadow: 0 0rem 3rem rgba($black, .1);
 
         &--input,
         &--btn {
-            font-size: 2.15rem;
-            padding: 1.2rem 1.4rem;
+            font-size: 2.05rem;
             border: none;
+            padding: .95rem 1.4rem;
 
             &:focus {
                 outline: none;
@@ -92,7 +110,9 @@ body {
         
         &--link {
             position: relative;
-            max-height: 10rem;
+            // max-height: 10rem;
+            // min-height: 4.8rem;
+            height: 3.75rem;
 
             .search-icon {
                 position: absolute;
@@ -101,42 +121,48 @@ body {
                 left: 50%;
                 transform: translate(-50%,-50%);
                 font-size: 2rem;
-                color: $white;
+                color: $orange;
+                pointer-events: none;
+                transition: .25s all ease-out;
             }
         }
 
         &--input {
-            width: 100%;
             border-top-left-radius: 1rem;
             border-bottom-left-radius: 1rem;
+            background-color: $white;
+            transition: .5s all ease;
+            height: 100%;
+            flex-grow: 5;
 
             &::placeholder {
                 opacity: .5;
                 font-style: italic;
             }
+
+            &:focus {
+                background-color: rgba($white, .5);
+            }
         }
 
         &--btn {
-            margin-top: .25rem;
-            background-color: $orange;
+            background-color: $white;
             border-top-right-radius: 1rem;
             border-bottom-right-radius: 1rem;
             cursor: pointer;
             font-weight: 700;
             height: 100%;
             padding-left: 3.75rem;
+            transition: .3s all ease;
+
+            &:hover {
+                background-color: $orange;
+
+                + .search-icon {
+                    color: rgba($white, .5);
+                }
+            }
         }
     }
 
-=======
-    background-color: red;
-    text-align: center;
-    &__title {
-
-    }
-
-    &__subtitle {
-
-    }
->>>>>>> css changes
 }
