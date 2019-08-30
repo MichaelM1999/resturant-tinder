@@ -17,13 +17,13 @@ app.set("view engine", "handlebars");
 
 //routes
 app.get("/", function (req, res) {
-  res.render(path.join(__dirname, "/views/index.handlebars"));
+  res.render(path.join(__dirname, "/views/index"));
 });
-app.get("/about", function (req, res) {
-  res.render(path.join(__dirname, "/views/about.handlebars"));
+app.get("/app", function (req, res) {
+  res.render(path.join(__dirname, "/views/app"));
 });
 app.get("/contact", function (req, res) {
-  res.render(path.join(__dirname, "/views/constact.handlebars"));
+  res.render(path.join(__dirname, "/views/contact"));
 });
 
 app.post("/api/restaurant/location", function (req, res) {

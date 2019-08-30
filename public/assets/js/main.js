@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 $(document).ready(function () {
     //click function
     
@@ -52,3 +53,14 @@ $(document).ready(function () {
         });
     });
 })
+=======
+$(function () {
+    $('.nav-expand').click(e => {
+        e.preventDefault();
+    
+        // $('.nav-container').css('clip-path', 'circle(100%)');
+    
+        $('.nav-container').toggleClass('full-circle');
+    });
+});
+>>>>>>> a0b4fb6359eb744970fe8f227e6d8d0238cf3b6f

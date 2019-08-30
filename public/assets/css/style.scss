@@ -1,10 +1,19 @@
 
+/* Color Theme Swatches in Hex */
+$brown: #544634;
+$orange: #FF3800;
+$orange-light: #ff6034;
+$orange-comp: #40c3ff;
+$black: #19191F;
+$grey: #4A4A59;
+$white: #f0f0f0;
 
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: brandon-grotesque, sans-serif;
 }
 
 body {
@@ -12,33 +21,344 @@ body {
     font-size: 10px;
     min-height: 100vh;
     background-color: rgb(24, 24, 24);
+    background-color: rgb(228, 218, 218);
+    overflow-x: hidden;
 }
 
 /*************************************************************************************************************
 ==================================   LANDING PAGE ============================================================
 ***************************************************************************************************************/
+
 .waves {
     .svg-wave {
         position: absolute;
     }
+}
 
-    #svg1 {
-        fill: rgba(68, 84, 204, 0.637);
+.logo {
+    font-size: 3.8rem;
+    color: $white;
+
+
+    &-container {
+        position: absolute;
+        z-index: 100;
+        min-width: 15rem;
+        top: 1.5rem;
+        left: 2.5rem;
+    }
+
+    .orange-text {
+        position: relative;
+        color: rgba($orange,.8);
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: .25rem;
+            top: .25rem;
+            z-index: -1;
+            background-color: $white;
+            width: 95%;
+            height: 80%;
+        }
     }
 }
 
+// CALL TO ACTION - WHERE USER IS INTRODUCED AND ENTERS A LOCATION TO QUERY
+
 .hero {
     position: absolute;
-    top: 50%;
+    top: 60%;
     left: 50%;
     transform: translate(-50%,-50%);
-    background-color: red;
     text-align: center;
-    &__title {
+    width: 100%;
 
+    &__title {
+        font-weight: 400;
+        font-size: 4.6rem;
+        color: rgba(68, 84, 204, 0.8);
+        margin-bottom: -1rem;
     }
 
     &__subtitle {
-
+        font-weight: 700;
+        font-size: 2.52rem;
+        color: #8f8f8f;
     }
+
+    &__form {
+        max-width: 35rem;
+        height: 3.75rem;
+        max-height: 10rem;
+        margin: 3rem auto 0;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        border-radius: 1rem;
+        box-shadow: 0 0rem 3rem rgba($black, .1);
+
+        &--input,
+        &--btn {
+            font-size: 2.05rem;
+            border: none;
+            padding: .95rem 1.4rem;
+
+            &:focus {
+                outline: none;
+            }
+        }
+        
+        &--link {
+            position: relative;
+            // max-height: 10rem;
+            // min-height: 4.8rem;
+            height: 3.75rem;
+
+            .search-icon {
+                position: absolute;
+                z-index: 20;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                font-size: 2rem;
+                color: $orange;
+                pointer-events: none;
+                transition: .25s all ease-out;
+            }
+        }
+
+        &--input {
+            border-top-left-radius: 1rem;
+            border-bottom-left-radius: 1rem;
+            background-color: $white;
+            transition: .5s all ease;
+            height: 100%;
+            flex-grow: 5;
+
+            &::placeholder {
+                opacity: .5;
+                font-style: italic;
+            }
+
+            &:focus {
+                background-color: rgba($white, .5);
+            }
+        }
+
+        &--btn {
+            background-color: $white;
+            border-top-right-radius: 1rem;
+            border-bottom-right-radius: 1rem;
+            cursor: pointer;
+            font-weight: 700;
+            height: 100%;
+            padding-left: 3.75rem;
+            transition: .3s all ease;
+
+            &:hover {
+                background-color: $orange;
+
+                + .search-icon {
+                    color: rgba($white, .5);
+                }
+            }
+        }
+    }
+}
+
+// NAV MENU
+
+.nav-expand {
+    position: fixed;
+    z-index: 9999;
+    top: 1rem;
+    right: 1rem;
+    background-color: $brown;
+    // background-image: linear-gradient(135deg, #8977db, #7facf5);
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    box-shadow: 0 0 .5rem rgba(0,0,0,.3);
+    cursor: pointer;
+
+
+    .nav-burger {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        path {
+            fill: #e1e1e1;
+        }
+    }
+}
+.nav {
+    position: relative;
+    left: 15%;
+    top: 55%;
+    display: flex;
+    flex-direction: column;
+    width: 15rem;
+    text-align: right;
+    &-container {
+        position: fixed;
+        z-index: 200;
+        border-radius: 50%;
+        transform: translate(50%, -50%);
+        top: 2.5rem;
+        right: 2.5rem;
+        height: 45rem;
+        width: 45rem;
+        background-color: $orange;
+        background-color: transparent;
+
+        overflow: hidden;
+        clip-path: circle(1.5rem);
+        transition: .7s all;
+    }
+
+    &-item {
+        position: relative;
+        color: #ebebeb;
+        color: rgba(68, 84, 204, 0.8);
+        text-decoration: none;
+        font-size: 2.5rem;
+        max-width: 100%;
+
+        &::before {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            left: 0;
+            bottom: 0;
+            height: .5rem;
+            width: 0%;
+            background-color: #1e466b;
+            transition: .3s all;
+        }
+
+        &:hover {
+
+            &::before {
+                width: 100%;
+            }
+        }
+    }
+}
+
+
+
+
+/*************************************************************************************************************
+==================================   APP PAGE ============================================================
+***************************************************************************************************************/
+
+.header {
+    width: 100vw;
+    height: 5rem;
+    background-color: $orange;
+
+    &__content {
+        width: 80%;
+        height: 100%;
+        margin: 0 auto;
+        background-color: rgba($white, .5);
+        display: flex;
+        align-items: center;
+    }
+
+    &__form {
+        max-width: 35rem;
+        height: 3.25rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 1rem;
+        box-shadow: 0 0rem 3rem rgba($black, .1);
+        margin-left: 1rem;
+
+        &--input,
+        &--btn {
+            font-size: 1.7rem;
+            border: none;
+            padding: .95rem 1.4rem;
+
+            &:focus {
+                outline: none;
+            }
+        }
+        
+        &--link {
+            position: relative;
+            height: 3.25rem;
+
+            .search-icon {
+                position: absolute;
+                z-index: 20;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                font-size: 1.5rem;
+                color: $orange;
+                pointer-events: none;
+                transition: .25s all ease-out;
+            }
+        }
+
+        &--input {
+            border-top-left-radius: 1rem;
+            border-bottom-left-radius: 1rem;
+            background-color: $white;
+            transition: .5s all ease;
+            height: 100%;
+            flex-grow: 5;
+
+            &::placeholder {
+                opacity: .5;
+                font-style: italic;
+            }
+
+            &:focus {
+                background-color: rgba($white, .5);
+            }
+        }
+
+        &--btn {
+            background-color: $white;
+            border-top-right-radius: 1rem;
+            border-bottom-right-radius: 1rem;
+            cursor: pointer;
+            font-weight: 700;
+            height: 100%;
+            padding-left: 3.75rem;
+            transition: .3s all ease;
+
+            &:hover {
+                background-color: $orange;
+
+                + .search-icon {
+                    color: rgba($white, .5);
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+// utilities
+
+.full-circle {
+    clip-path: circle(100%);
 }
