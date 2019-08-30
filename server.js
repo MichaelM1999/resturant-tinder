@@ -25,7 +25,10 @@ app.get("/about", function (req, res) {
 app.get("/contact", function (req, res) {
   res.render(path.join(__dirname, "/views/constact.handlebars"));
 });
-app.get("/api/:location", function (req, res) {
+
+app.post("/api/restaurant/location", function (req, res) {
+  console.log(req.body.restaurantsArr);
+  res.send("I DID IT");
   // res.render(path.join(__dirname, "/views/index.handlebars"));
   //ajax call using req.params
   //app.post to server from front end
