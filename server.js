@@ -2,9 +2,10 @@ const express = require("express");
 const path = require("path");
 const exphbs = require("express-handlebars");
 const mysql = require("mysql");
-
+const db = require("./models");
 const app = express();
 const PORT = process.env.PORT || 3000;
+
 
 app.use(express.static(__dirname + "/public/"));
 app.use(express.urlencoded({
@@ -33,8 +34,14 @@ app.get("/api/:location", function (req, res) {
   // render using handle bars
 });
 
-//listening on ***
-app.listen(PORT, function() {
-    // Log (server-side) when our server has started
-    console.log("Server listening on: http://localhost:" + PORT);
+// Routes
+// =============================================================
+require("./routes/api-routes.js")(app);
+
+// Syncing our sequelize models and then starting our Express app
+// =============================================================
+db.sequelize.sync().then(function() {
+  app.listen(PORT, function() {
+    console.log("App listening on PORT " + PORT);
   });
+});

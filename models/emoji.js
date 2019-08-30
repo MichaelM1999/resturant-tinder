@@ -6,13 +6,13 @@ module.exports = function(sequelize, DataTypes) {
     complete: DataTypes.BOOLEAN
   });
 
- Emoji.associate = function(models) {
-    // Associating Emoji with Posts
-    // When an Emoji is deleted, also delete any associated Posts
-  Emoji.hasMany(models.Post, {
-      onDelete: "cascade"
-    });
-  };
+//  Emoji.associate = function(models) {
+//     // Associating Emoji with Posts
+//     // When an Emoji is deleted, also delete any associated Posts
+//   Emoji.hasMany(models.Post, {
+//       onDelete: "cascade"
+//     });
+//   };
 
   return Emoji;
 };
