@@ -98,6 +98,7 @@ body {
   font-size: 2.05rem;
   border: none;
   padding: .95rem 1.4rem;
+  max-height: 3.75rem;
 }
 
 .hero__form--input:focus, .hero__form--btn:focus {
@@ -407,6 +408,7 @@ body {
   font-size: 1.7rem;
   border: none;
   padding: .95rem 1.4rem;
+  max-height: 3.25rem;
 }
 
 .header__form--input:focus, .header__form--btn:focus {
@@ -491,5 +493,22 @@ body {
 .full-circle {
   -webkit-clip-path: circle(100%);
           clip-path: circle(100%);
+}
+
+.ap-input {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.ap-icon-pin {
+  display: none;
+}
+
+.ap-suggestion {
+  font-size: 1.25rem;
+}
+
+.ap-icon-clear {
+  cursor: pointer;
 }
 /*# sourceMappingURL=style.css.map */

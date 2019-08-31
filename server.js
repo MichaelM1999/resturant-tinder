@@ -1,40 +1,25 @@
+// INIT SERVER
 const express = require("express");
-const path = require("path");
-const exphbs = require("express-handlebars");
-const mysql = require("mysql");
-
 const app = express();
 const PORT = process.env.PORT || 3000;
-
 app.use(express.static(__dirname + "/public/"));
-app.use(express.urlencoded({
-  extended: true
-}));
+app.use(express.urlencoded({extended: true}));
 app.use(express.json());
-//put into public folder so that js and css all serve;
+
+
+// HANDLEBARS INIT
+const exphbs = require("express-handlebars");
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-//routes
-app.get("/", function (req, res) {
-  res.render(path.join(__dirname, "/views/index"));
-});
-app.get("/app", function (req, res) {
-  res.render(path.join(__dirname, "/views/app"));
-});
-app.get("/contact", function (req, res) {
-  res.render(path.join(__dirname, "/views/contact"));
-});
-app.get("/api/:location", function (req, res) {
-  // res.render(path.join(__dirname, "/views/index.handlebars"));
-  //ajax call using req.params
-  //app.post to server from front end
-  //push to array 
-  // render using handle bars
-});
 
-//listening on ***
+// ROUTES INIT
+require('./routes/api-routes')(app);
+require('./routes/html-routes')(app);
+
+
+// START SERVER
 app.listen(PORT, function() {
     // Log (server-side) when our server has started
     console.log("Server listening on: http://localhost:" + PORT);
-  });
+});
