@@ -1,3 +1,5 @@
+import 'simplebar';
+import 'simplebar/dist/simplebar.css';
 
 $(function () {
     // EXPAND /RETRACT MENU
@@ -19,7 +21,9 @@ function getLocation(location) {
     $.get(`/api/location/${location}`, (data) => {
             let businesses = data.detailsArr;
             console.log(businesses);
-            // window.location.href = "/app";
+            if (window.location.href != "/app") {
+                window.location.href = "/app";
+            }
         }
     );
 }

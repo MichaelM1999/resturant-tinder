@@ -1,33 +1,24 @@
 const axios = require("axios");
 require("dotenv").config();
 
-// app.get("/contact", function (req, res) {
-//   res.render(path.join(__dirname, "/views/contact"));
-// });
-// app.get("/api/:location", function (req, res) {
-//   // res.render(path.join(__dirname, "/views/index.handlebars"));
-//   //ajax call using req.params
-//   //app.post to server from front end
-//   //push to array
-//   // render using handle bars
-// });
-
 
 module.exports = (app) => {
     let detailsArr = [];
+
+    // GET LOCATION INPUT
     app.get('/api/location/:location', (req,res) => {
         let location = req.params.location;
         location = location.replace(/ /g, '+');
-        console.log(location);
+
+        // GET LIST OF BUSINESSES
         axios.get(`https://api.yelp.com/v3/businesses/search?location=${location}&limit=${5}`, {
             headers: {
                 Authorization: `Bearer ${process.env.API_KEY}`
             }
         }).then(response => {
-            // console.log(response.data.businesses[0]);
             const businesses = response.data.businesses;
-            // console.log(businesses);
 
+            //LOOP THROUGH ALL BUSINESSES & MAKE 2ND CALL TO YELP TO GET BUSINESS DETAILS FOR EACH
             businesses.forEach(business => {
                 axios.get(`https://api.yelp.com/v3/businesses/${business.id}`, {
                     headers: {
@@ -35,6 +26,8 @@ module.exports = (app) => {
                     }
                 }).then(response => {
                     const data = response.data;
+
+                    // BUILD DATA OBJECT FOR INPUTTING INTO HTML 
                     let details = {
                         name: data.name,
                         images: data.photos,
