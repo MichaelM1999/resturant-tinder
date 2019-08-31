@@ -17,10 +17,9 @@ $(function () {
 function getLocation(location) {
 
     $.get(`/api/location/${location}`, (data) => {
-            console.dir(data);
-
-            window.location.href = "/app";
+            let businesses = data.detailsArr;
+            console.log(businesses);
+            // window.location.href = "/app";
         }
     );
-
 }
