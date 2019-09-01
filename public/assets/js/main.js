@@ -12,7 +12,10 @@ $(function() {
         centeredSlides: true,
         loop: true,
         effect: 'coverflow',
-        speed: 1000,
+        speed: 700,
+        resistence: false,
+        resistenceRatio: .5,
+        grabCursor: true,
         //   // Navigation arrows
         navigation: {
             nextEl: '.swiper-button-next',

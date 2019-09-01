@@ -1,37 +1,36 @@
-<main class="app-container swiper-container">
-
-    <header class="header">
-        <div class="header__content">
-            <form class="header__form search__form">
-                <input placeholder="City, State, or Zip Code" type="text" name="location" id="location"
-                    class="header__form--input">
-                <a href="#" class="header__form--link"><input type="submit" id="Btn" class="header__form--btn"
-                        value=""><i class="search-icon fas fa-search-location"></i></a>
-            </form>
-            <div class="header__filter--container">
-                <div class="header__filter__radio--container">
-                    <input type="radio" name="filter" id="Category" class="header__filter__radio">
-                    <label for="Category" class="header__filter__radio--label">Category
-                        <div class="mdi mdi-menu-down"></div>
-                    </label>
-                </div>
-                <div class="header__filter__radio--container">
-                    <input type="radio" name="filter" id="Price" class="header__filter__radio">
-                    <label for="Price" class="header__filter__radio--label">Price
-                        <div class="mdi mdi-menu-down"></div>
-                    </label>
-                </div>
-                <div class="header__filter__radio--container">
-                    <input type="radio" name="filter" id="Rating" class="header__filter__radio">
-                    <label for="Rating" class="header__filter__radio--label">Rating
-                        <div class="mdi mdi-menu-down"></div>
-                    </label>
-                </div>
-                <div class="header__filter__submit--container mdi mdi-filter"><input type="button"
-                        value="Filter Results" class="header__filter__submit" id="filterResults"></div>
+<header class="header">
+    <div class="header__content">
+        <form class="header__form search__form">
+            <input placeholder="City, State, or Zip Code" type="text" name="location" id="location"
+                class="header__form--input">
+            <a href="#" class="header__form--link"><input type="submit" id="Btn" class="header__form--btn" value=""><i
+                    class="search-icon fas fa-search-location"></i></a>
+        </form>
+        <div class="header__filter--container">
+            <div class="header__filter__radio--container">
+                <input type="radio" name="filter" id="Category" class="header__filter__radio">
+                <label for="Category" class="header__filter__radio--label">Category
+                    <div class="mdi mdi-menu-down"></div>
+                </label>
             </div>
+            <div class="header__filter__radio--container">
+                <input type="radio" name="filter" id="Price" class="header__filter__radio">
+                <label for="Price" class="header__filter__radio--label">Price
+                    <div class="mdi mdi-menu-down"></div>
+                </label>
+            </div>
+            <div class="header__filter__radio--container">
+                <input type="radio" name="filter" id="Rating" class="header__filter__radio">
+                <label for="Rating" class="header__filter__radio--label">Rating
+                    <div class="mdi mdi-menu-down"></div>
+                </label>
+            </div>
+            <div class="header__filter__submit--container mdi mdi-filter"><input type="button" value="Filter Results"
+                    class="header__filter__submit" id="filterResults"></div>
         </div>
-    </header>
+    </div>
+</header>
+<main class="app-container swiper-container">
     <div class="app-body swiper-wrapper">
         {{!-- <div class="left-hint swiper-slide">
 
