@@ -1,29 +1,46 @@
-import 'simplebar';
-import 'simplebar/dist/simplebar.css';
-
-$(function () {
+$(function() {
     // EXPAND /RETRACT MENU
-    $('.nav-expand').click(e => {
-        e.preventDefault();    
-        $('.nav-container').toggleClass('full-circle');
+    $(".nav-expand").click(e => {
+        e.preventDefault();
+        $(".nav-container").toggleClass("full-circle");
     });
 
+    //initialize swiper when document ready
+    const mySwiper = new Swiper(".app-container", {
+        // Optional parameters
+        direction: "horizontal",
+        centeredSlides: true,
+        loop: true,
+        effect: 'coverflow',
+        speed: 1000,
+        //   // Navigation arrows
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        //   // And if we need scrollbar
+        //   scrollbar: {
+        //     el: '.swiper-scrollbar',
+        //   }
+    });
 
     // HANDLE SUBMITTING LOCATION DATA EVENT
-    $('.search__form').on('submit', function (e) {
+    $(".search__form").on("submit", function(e) {
         e.preventDefault();
-        getLocation($('#location').val().trim());
+        getLocation(
+            $("#location")
+                .val()
+                .trim()
+        );
     });
 });
 
 function getLocation(location) {
-
-    $.get(`/api/location/${location}`, (data) => {
-            let businesses = data.detailsArr;
-            console.log(businesses);
-            if (window.location.href != "/app") {
-                window.location.href = "/app";
-            }
+    $.get(`/api/location/${location}`, data => {
+        let businesses = data.detailsArr;
+        console.log(businesses);
+        if (window.location.href != "/app") {
+            window.location.href = "/app";
         }
-    );
+    });
 }

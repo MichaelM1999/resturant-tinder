@@ -28,8 +28,7 @@
     "lodash": "^4.17.15",
     "mysql": "^2.17.1",
     "mysql2": "^1.6.5",
-    "sequelize": "^5.16.0",
-    "simplebar": "^4.2.0"
+    "sequelize": "^5.16.0"
   },
   "devDependencies": {
     "webpack": "^4.39.3",
