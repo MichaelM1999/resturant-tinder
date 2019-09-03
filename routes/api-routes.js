@@ -1,99 +1,121 @@
 const axios = require("axios");
 require("dotenv").config();
+const db = require("../models");
+const path = require("path");
 
-
-module.exports = (app) => {
+module.exports = app => {
     let detailsArr = [];
+    const days = [
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+        "saturday",
+        "sunday"
+    ]
 
     // GET LOCATION INPUT
-    app.get('/api/location/:location', (req,res) => {
+    app.get("/api/location/:location", (req, res) => {
         let location = req.params.location;
-        location = location.replace(/ /g, '+');
+        location = location.replace(/ /g, "+");
 
         // GET LIST OF BUSINESSES
-        axios.get(`https://api.yelp.com/v3/businesses/search?location=${location}&limit=${5}`, {
-            headers: {
-                Authorization: `Bearer ${process.env.API_KEY}`
-            }
-        }).then(response => {
-            const businesses = response.data.businesses;
-
-            //LOOP THROUGH ALL BUSINESSES & MAKE 2ND CALL TO YELP TO GET BUSINESS DETAILS FOR EACH
-            businesses.forEach(business => {
-                axios.get(`https://api.yelp.com/v3/businesses/${business.id}`, {
+        axios
+            .get(
+                `https://api.yelp.com/v3/businesses/search?location=${location}&limit=5`,
+                {
+                    // &categories=food,bars,restaurants&radius=30000
                     headers: {
                         Authorization: `Bearer ${process.env.API_KEY}`
                     }
-                }).then(response => {
-                    const data = response.data;
+                }
+            )
+            .then(response => {
+                const businesses = response.data.businesses;
+                let k = 0;
+                //LOOP THROUGH ALL BUSINESSES & MAKE 2ND CALL TO YELP TO GET BUSINESS DETAILS FOR EACH
+                businesses.forEach(business => {
+                    axios
+                        .get(
+                            `https://api.yelp.com/v3/businesses/${business.id}`,
+                            {
+                                headers: {
+                                    Authorization: `Bearer ${process.env.API_KEY}`
+                                }
+                            }
+                        )
+                        .then(response => {
+                            const hoursArr = response.data.hours[0].open;
+                            // console.log(business.id);
+                            // console.log(JSON.stringify(hoursArr, null, 4));
+                            const data = response.data;
+                            // db.Restaurant.findOrCreate({
+                            //     where: {
+                            //         business_id: business.id,
+                            //         name: data.name
+                            //     }
+                            // }).then(([businessData, isNew]) => {
+                            //     // console.log(businessData);
+                            //     // BUILD DATA OBJECT FOR INPUTTING INTO HTML
+                            // });
+                            let details = {
+                                name: data.name,
+                                images: data.photos,
+                                categories: data.categories,
+                                rating: data.rating,
+                                address: data.location.display_address,
+                                hours: {}
+                            };
+                            for (let i = 0; i < hoursArr.length; i++) {
+                                details.hours[days[i]] = {
+                                    day: i,
+                                    start: data.hours[0].open[i].start,
+                                    end: data.hours[0].open[i].end,
+                                    is_overnight:
+                                        data.hours[0].open[i].is_overnight
+                                };
+                            }
+                            if (!details.hours[days[6]]) {
+                                details.hours[days[6]] = {
+                                    day: 6,
+                                    start: 'closed',
+                                    end: null,
+                                    is_overnight: null
+                                }
+                            }
+                            detailsArr.push(details);
+                            // console.log(details);
+                            k++;
+                            if (k === businesses.length - 1) {
+                                console.log(`
+                                ---------------------------------------------------------------------------------------------------
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                BELOW IS THE FULL DETAILS ARRAY BEING PUSHED TO THE FRONT END`);
+                                console.log(JSON.stringify(detailsArr, null, 4));
 
-                    // BUILD DATA OBJECT FOR INPUTTING INTO HTML 
-                    let details = {
-                        name: data.name,
-                        images: data.photos,
-                        categories: data.categories,
-                        rating: data.rating,
-                        address: data.location.display_address,
-                        hours: {
-                            monday: {
-                                day: 0,
-                                start: data.hours[0].open[0].start,
-                                end: data.hours[0].open[0].end,
-                                is_overnight: data.hours[0].open[0].is_overnight
-                            },
-                            tuesday: {
-                                day: 1,
-                                start: data.hours[0].open[1].start,
-                                end: data.hours[0].open[1].end,
-                                is_overnight: data.hours[0].open[1].is_overnight
-                            },
-                            wednesday: {
-                                day: 2,
-                                start: data.hours[0].open[2].start,
-                                end: data.hours[0].open[2].end,
-                                is_overnight: data.hours[0].open[2].is_overnight
-                            },
-                            thursday: {
-                                day: 3,
-                                start: data.hours[0].open[3].start,
-                                end: data.hours[0].open[3].end,
-                                is_overnight: data.hours[0].open[3].is_overnight
-                            },
-                            friday: {
-                                day: 4,
-                                start: data.hours[0].open[4].start,
-                                end: data.hours[0].open[4].end,
-                                is_overnight: data.hours[0].open[4].is_overnight
-                            },
-                            saturday: {
-                                day: 5,
-                                start: data.hours[0].open[5].start,
-                                end: data.hours[0].open[5].end,
-                                is_overnight: data.hours[0].open[5].is_overnight
-                            },
-                            sunday: {
-                                day: 6,
-                                start: data.hours[0].open[6].start,
-                                end: data.hours[0].open[6].end,
-                                is_overnight: data.hours[0].open[6].is_overnight
-                            },
-                        }
-                    }
-                    detailsArr.push(details);
-                    console.log(`
-                    ---------------------------------------------------------------------------------------------------
-                    ---------------------------------------------------------------------------------------------------`);     
-                    console.log(detailsArr);
-                    res.json({detailsArr});
-                })
-            }).catch(err => {
+                                res.render(
+                                    path.join(__dirname, "../views/app"), detailsArr);
+                            }
+                        })
+                        .catch(err => {
+                            if (err) throw err;
+                        });
+                });
+                console.log(`
+                ---------------------------------------------------------------------------------------------------`);
+            })
+            .catch(err => {
                 if (err) throw err;
             });
-        }).catch(err => {
-            if (err) throw err;
-        });
     });
-}
+};
 
 // async () => {
 //     const response = await axios({
