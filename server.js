@@ -6,6 +6,9 @@ app.use(express.static(__dirname + "/public/"));
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 
+// SYNC MODELS FOR DB
+const db = require("./models");
+
 
 // HANDLEBARS INIT
 const exphbs = require("express-handlebars");
@@ -18,8 +21,12 @@ require('./routes/api-routes')(app);
 require('./routes/html-routes')(app);
 
 
+
+
+db.sequelize.sync({force: true}).then(() => {
 // START SERVER
-app.listen(PORT, function() {
+    app.listen(PORT, function() {
     // Log (server-side) when our server has started
     console.log("Server listening on: http://localhost:" + PORT);
+});
 });

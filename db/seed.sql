@@ -1,0 +1,1 @@
+INSERT INTO `restaurants` (business_id, name, createdAt, UpdatedAt) VALUES ("fiwebfkb5k989vnvm", "Taco Bell", 0, 0);
