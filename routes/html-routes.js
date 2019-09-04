@@ -21,7 +21,7 @@ module.exports = (app) => {
 
     app.get("/app/:location", (req, res) => {
         let location = req.params.location;
-        console.log(location);
+        // console.log(location);
         location = location.replace(/ /g, "+");
         let detailsArr = [];
         const days = [
@@ -36,7 +36,7 @@ module.exports = (app) => {
         // GET LIST OF BUSINESSES
         axios
             .get(
-                `https://api.yelp.com/v3/businesses/search?location=${location}&limit=15`,
+                `https://api.yelp.com/v3/businesses/search?location=${location}&limit=1`,
                 {
                     // &categories=food,bars,restaurants&radius=30000
                     headers: {

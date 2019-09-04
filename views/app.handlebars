@@ -882,7 +882,7 @@ body {
         <div class="swiper-slide">
             <div class="jumbotron">
                 <div class="jumbotron--container">
-                    <div class="jumbotron__photobox">{{#each images}}
+                    <div class="jumbotron__photobox" style="overflow-y: scroll">{{#each images}}
                         <img id="businessPhoto" class="jumbotron__photobox__photo" src="{{this}}" alt="{{../name}}">{{/each}}
                     </div>
                     <div class="jumbotron__profilebox">
