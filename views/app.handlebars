@@ -878,13 +878,12 @@ body {
 {{log "HERE IT IS "}}
 {{log businesses}}
 <main class="app-container swiper-container">
-    <div class="app-body swiper-wrapper">
-        <div class="swiper-slide">{{#each businesses}}
+    <div class="app-body swiper-wrapper">{{#each businesses}}
+        <div class="swiper-slide">
             <div class="jumbotron">
                 <div class="jumbotron--container">
                     <div class="jumbotron__photobox">{{#each images}}
-                        <img id="businessPhoto" class="jumbotron__photobox__photo" src=`{{this}}`
-                            alt="{{../name}}">{{/each}}
+                        <img id="businessPhoto" class="jumbotron__photobox__photo" src="{{this}}" alt="{{../name}}">{{/each}}
                     </div>
                     <div class="jumbotron__profilebox">
                         <div class="jumbotron__profilebox__stars">
@@ -949,7 +948,7 @@ body {
                     </div>
                 </div>
             </div>
-            {{/each}}</div>
+        </div>{{/each}}
 
     </div>
     <div class="swiper-button-prev mdi mdi-arrow-left">
@@ -959,3 +958,4 @@ body {
 
     </div>
 </main>
+

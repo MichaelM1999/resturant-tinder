@@ -36,7 +36,7 @@ module.exports = (app) => {
         // GET LIST OF BUSINESSES
         axios
             .get(
-                `https://api.yelp.com/v3/businesses/search?location=${location}&limit=10`,
+                `https://api.yelp.com/v3/businesses/search?location=${location}&limit=15`,
                 {
                     // &categories=food,bars,restaurants&radius=30000
                     headers: {
