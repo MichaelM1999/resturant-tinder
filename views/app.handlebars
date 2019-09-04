@@ -1,36 +1,125 @@
-<main class="app-container">
-    <header class="header">
-        <div class="header__content">
-            <form class="header__form">
-                <input placeholder="City, State, or Zip Code" type="text" name="location" id="location"
-                    class="header__form--input">
-                <a href="#" class="header__form--link"><input type="button" id="Btn" class="header__form--btn"><i
-                        class="search-icon fas fa-search-location"></i></a>
-            </form>
-            <div class="header__filter--container">
-                <div class="header__filter__radio--container">
-                    <input type="radio" name="filter" id="Category" class="header__filter__radio">
-                    <label for="Category" class="header__filter__radio--label">
-                        Category
-                        <div class="mdi mdi-menu-down"></div>
-                    </label>
-                </div>
-                <div class="header__filter__radio--container">
-                    <input type="radio" name="filter" id="Category" class="header__filter__radio">
-                    <label for="Category" class="header__filter__radio--label">
-                        Price
-                        <div class="mdi mdi-menu-down"></div>
-                    </label>
-                </div>
-                <div class="header__filter__radio--container">
-                    <input type="radio" name="filter" id="Category" class="header__filter__radio">
-                    <label for="Category" class="header__filter__radio--label">
-                        Rating
-                        <div class="mdi mdi-menu-down"></div>
-                    </label>
-                </div>
-                <div class="header__filter__submit--container mdi mdi-filter"><input type="button" value="Filter Results" class="header__filter__submit" id="filterResults"></div>
+<div class="nav-expand">
+  <svg class="nav-burger" style="width:24px;height:24px" viewBox="0 0 24 24">
+    <path fill="#e1e1e1" d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" />
+  </svg>
+</div>
+<div class="nav-container">
+  <nav class="nav">
+    <a href="#skills" class="nav-item">How It Works</a>
+    <a href="#contact" class="nav-item">Contact</a>
+  </nav>
+</div>
+<header class="header">
+  <div class="header__content">
+    <form class="header__form search__form">
+      <input placeholder="City, State, or Zip Code" type="text" name="location" id="location"
+        class="header__form--input">
+      <a href="#" class="header__form--link"><input type="submit" id="Btn" class="header__form--btn" value=""><i
+          class="search-icon fas fa-search-location"></i></a>
+    </form>
+    <div class="header__filter--container">
+      <div class="header__filter__radio--container">
+        <input type="radio" name="filter" id="Category" class="header__filter__radio">
+        <label for="Category" class="header__filter__radio--label">Category
+          <div class="mdi mdi-menu-down"></div>
+        </label>
+      </div>
+      <div class="header__filter__radio--container">
+        <input type="radio" name="filter" id="Price" class="header__filter__radio">
+        <label for="Price" class="header__filter__radio--label">Price
+          <div class="mdi mdi-menu-down"></div>
+        </label>
+      </div>
+      <div class="header__filter__radio--container">
+        <input type="radio" name="filter" id="Rating" class="header__filter__radio">
+        <label for="Rating" class="header__filter__radio--label">Rating
+          <div class="mdi mdi-menu-down"></div>
+        </label>
+      </div>
+      <div class="header__filter__submit--container mdi mdi-filter"><input type="button" value="Filter Results"
+          class="header__filter__submit" id="filterResults"></div>
+    </div>
+  </div>
+</header>
+{{log "HERE IT IS "}}
+{{log businesses}}
+<main class="app-container swiper-container">
+  <div class="app-body swiper-wrapper">{{#each businesses}}
+    <div class="swiper-slide">
+      <div class="jumbotron">
+        <div class="jumbotron--container">
+          <div class="jumbotron__photobox" style="overflow-y: scroll">{{#each images}}
+            <img id="businessPhoto" class="jumbotron__photobox__photo" src="{{this}}" alt="{{../name}}">{{/each}}
+          </div>
+          <div class="jumbotron__profilebox">
+            <div class="jumbotron__profilebox__stars">
+              <span class="star mdi mdi-star"></span>
+              <span class="star mdi mdi-star"></span>
+              <span class="star mdi mdi-star"></span>
+              <span class="star mdi mdi-star"></span>
+              <span class="star mdi mdi-star"></span>
             </div>
+            <h1 class="jumbotron__profilebox__title">{{name}}</h1>
+            <div class="jumbotron__profilebox__link--container">
+              <a class="jumbotron__profilebox__link"
+                href="https://locations.tacobell.com/az/tempe/1801-east-guadalupe.html" target="_blank">Website</a>
+            </div>
+            <div class="jumbotron__profilebox__address--container">
+              <h2 class="jumbotron__profilebox__address-title">
+                Address:
+              </h2>
+              <div class="jumbotron__profilebox__address">{{#each address}}
+                <p class="addr1">{{this}}</p>{{log this}}{{/each}}
+              </div>
+            </div>
+            <div class="jumbotron__profilebox__contact--container">
+              <h2 class="jumbotron__profilebox__contact-title">
+                Phone:
+              </h2>
+              <p class="contact-num">(480) 756-0991</p>
+            </div>
+          </div>
+          <div class="jumbotron__reactionsbox">
+            <div class="reactions--container" data-simplebar>
+            </div>
+          </div>
+          <div class="jumbotron__hoursbox">
+            <h2 class="jumbotron__hoursbox--title">
+              Hours of Operation:
+            </h2>
+            <div class="jumbotron__hoursbox__hours--container">
+              <p class="jumbotron__hoursbox__hours" id="monday">
+                Monday: 7:00 AM - 1:00 AM
+              </p>
+              <p class="jumbotron__hoursbox__hours" id="tuesday">
+                Tuesday: 7:00 AM - 1:00 AM
+              </p>
+              <p class="jumbotron__hoursbox__hours" id="wednesday">
+                Wednesday: 7:00 AM - 1:00 AM
+              </p>
+              <p class="jumbotron__hoursbox__hours" id="thursday">
+                Thursday: 7:00 AM - 1:00 AM
+              </p>
+              <p class="jumbotron__hoursbox__hours" id="friday">
+                Friday: 7:00 AM - 2:00 AM
+              </p>
+              <p class="jumbotron__hoursbox__hours" id="saturday">
+                Saturday: 7:00 AM - 2:00 AM
+              </p>
+              <p class="jumbotron__hoursbox__hours" id="sunday">
+                Sunday: 7:00 AM - 1:00 AM
+              </p>
+            </div>
+          </div>
         </div>
-    </header>
+      </div>
+    </div>{{/each}}
+
+  </div>
+  <div class="swiper-button-prev mdi mdi-arrow-left">
+
+  </div>
+  <div class="swiper-button-next mdi mdi-arrow-right">
+
+  </div>
 </main>
