@@ -131,3 +131,44 @@ function showEmojies(emojiObj) {
         $container.append($reaction);
     });
 }
+let catagories = [
+    "Breakfast",
+    "lunch",
+    "Dinner",
+    "Desert",
+    "Mexican",
+    "American",
+    "Greek",
+    "Chineese",
+    "Asian",
+    "Fast Food",
+    "Sit Down",
+    "fine dining",
+    "Pizzia",
+    "Tacos",
+    "Smoothies",
+    "IceCream",
+    "Bakeries",
+    "breweries",
+    "Coffee",
+    "Fishmonger",
+    "Poke",
+    "Pretzels",
+    "Water Stores",
+    "Sex Therapists",
+    "Food Banks",
+    "Boat Repair",
+    "Post Offices",
+    "Belgian",
+    "Barbeque",
+    "Burgers",
+    "Caribbean",
+    "Chilean",
+    "Comfort Food",
+    "Food Court",
+    "Hawaiian"
+]
+for (let i = 0; i < catagories.length; i++){
+    emoji = catagories[i];
+    $(".")
+}
