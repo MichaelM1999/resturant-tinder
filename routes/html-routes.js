@@ -1,6 +1,7 @@
 const path = require("path");
 const axios = require("axios");
-
+require("dotenv").config();
+const db = require("../models");
 module.exports = (app) => {
 
     // LANDING PAGE
@@ -36,7 +37,7 @@ module.exports = (app) => {
         // GET LIST OF BUSINESSES
         axios
             .get(
-                `https://api.yelp.com/v3/businesses/search?location=${location}&limit=1`,
+                `https://api.yelp.com/v3/businesses/search?location=${location}&limit=5`,
                 {
                     // &categories=food,bars,restaurants&radius=30000
                     headers: {
@@ -62,15 +63,15 @@ module.exports = (app) => {
                             // console.log(business.id);
                             // console.log(JSON.stringify(hoursArr, null, 4));
                             const data = response.data;
-                            // db.Restaurant.findOrCreate({
-                            //     where: {
-                            //         business_id: business.id,
-                            //         name: data.name
-                            //     }
-                            // }).then(([businessData, isNew]) => {
-                            //     // console.log(businessData);
-                            //     // BUILD DATA OBJECT FOR INPUTTING INTO HTML
-                            // });
+                            db.Restaurant.findOrCreate({
+                                where: {
+                                    business_id: business.id,
+                                    name: data.name
+                                }
+                            }).then(([businessData, isNew]) => {
+                                // console.log(businessData);
+                                // BUILD DATA OBJECT FOR INPUTTING INTO HTML
+                            });
                             let details = {
                                 name: data.name,
                                 images: data.photos,
