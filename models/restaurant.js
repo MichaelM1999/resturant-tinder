@@ -277,5 +277,13 @@ module.exports = function(sequelize, DataTypes) {
     {
         timestamps: false
     });
+    Restaurant.associate = function(models) {
+        Restaurant.belongsTo(models.emoji, {
+
+            foreignKey: {
+                allowNull: false
+            }
+        });
+    }
     return Restaurant;
 };
