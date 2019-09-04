@@ -110,13 +110,11 @@ $(function() {
 
 });
 function getLocation(location) {
-    $.get(`/api/location/${location}`, data => {
-        let businesses = data.detailsArr;
-        console.log(JSON.stringify(businesses));
-        if (window.location.href != "/app") {
-            window.location.href = "/app";
-        }
-    });
+    // $.get(`/api/location/${location}`, data => {
+    //     let businesses = data.detailsArr;
+    //     console.log(JSON.stringify(businesses));
+        window.location.href = `/app/${location}`;
+    // });
 }
 
 function showEmojies(emojiObj) {
