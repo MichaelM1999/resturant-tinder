@@ -170,5 +170,5 @@ let catagories = [
 ]
 for (let i = 0; i < catagories.length; i++){
     emoji = catagories[i];
-    $(".")
+    $(".mdi-menu-down").append(emoji);
 }
