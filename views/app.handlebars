@@ -59,6 +59,7 @@
               <span class="star mdi mdi-star"></span>
             </div>
             <h1 class="jumbotron__profilebox__title">{{name}}</h1>
+            <p class="price">{{price}}</p>
             <div class="jumbotron__profilebox__link--container">
               <a class="jumbotron__profilebox__link" href="{{url}}" target="_blank">Website</a>
             </div>
@@ -79,7 +80,7 @@
           </div>
           <div class="jumbotron__reactionsbox">
             <div class="reactions--container" data-simplebar>{{#each emojis}}
-              <div class="reactions" id="{{name}}" data-index="{{@index}}">{{hex}}
+              <div class="reactions" id="{{name}}" data-index="{{@index}}" data-clicked="false" data-id="{{../id}}">{{hex}}
                 <p class="reactions__count">{{count}}</p>
               </div>{{/each}}
             </div>
@@ -117,31 +118,24 @@
     </div>{{/each}}
 
   </div>
-  <div class="swiper-button-prev mdi mdi-arrow-left">
 
-  </div>
-  <div class="swiper-button-next mdi mdi-arrow-right">
-
-  </div>
 </main>
-{{!-- {{#each businesses}} --}}
-{{!-- <script>
-  let name = "{{businesses}}";
-  console.log(name);
+<div class="swiper-button-prev mdi mdi-arrow-left arrow-btn">
 
-  showEmojies(emojis);
-  function showEmojies(emojiObj) {
-    let i = 0;
-    let emojiHexCode = Object.values(emojiObj);
-    let emojiNames = Object.keys(emojiObj);
-    // console.log(emojiHexCode);
-    // console.log(emojiNames);
-    let $container = $('.reactions--container .simplebar-content');
-    emojiHexCode.forEach(emoji => {
-      let $reaction = $('<div>').addClass('reactions').html(emoji);
-      let $reactionCount = $('<p>').addClass('reactions__count').html();
-      $reaction.append($reactionCount);
-      $container.append($reaction);
-    });
-  }
-</script>{{/each}} --}}
+</div>
+<div class="swiper-button-next mdi mdi-arrow-right arrow-btn">
+
+</div>
+{{!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> --}}
+{{!-- <script src="http://localhost:3000/assets/js/algolia.js"></script> --}}
+
+{{!-- <script>
+  $(".header__form").on("submit", function (e) {
+    e.preventDefault();
+    getLocation(
+      $("#location")
+        .val()
+        .trim()
+    );
+  });
+</script> --}}
