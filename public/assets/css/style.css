@@ -696,7 +696,7 @@ body {
           box-shadow: 0 0 1.5rem rgba(25, 25, 31, 0.2);
   text-align: right;
   padding: 0 0.5rem 0 0.5rem;
-  height: 95%;
+  min-height: 90%;
 }
 
 .app-body .jumbotron__profilebox__stars {
@@ -704,12 +704,12 @@ body {
 }
 
 .app-body .jumbotron__profilebox__stars .star {
-  font-size: 1.65rem;
+  font-size: 1.35rem;
   color: #40c3ff;
 }
 
 .app-body .jumbotron__profilebox__title {
-  font-size: 2.15rem;
+  font-size: 2.05rem;
   padding-right: 0.5rem;
   line-height: 1;
 }
@@ -724,7 +724,7 @@ body {
 }
 
 .app-body .jumbotron__profilebox__address--container, .app-body .jumbotron__profilebox__contact--container {
-  margin: 1rem 0;
+  margin: .25rem 0;
   padding-right: 0.5rem;
 }
 
@@ -788,15 +788,19 @@ body {
 .app-body .jumbotron__hoursbox {
   background-color: #3eaf56;
   text-align: right;
-  padding: 0.5rem 1.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  padding: .5rem 1.5rem;
   background-color: #ebebdb;
   border-radius: 0.5rem;
   -webkit-box-shadow: inset 0 0 1.5rem rgba(25, 25, 31, 0.2);
           box-shadow: inset 0 0 1.5rem rgba(25, 25, 31, 0.2);
+  max-height: 90%;
 }
 
 .app-body .jumbotron__hoursbox--title {
   font-size: 1.6rem;
+  margin-top: .5rem;
 }
 
 .app-body .jumbotron__hoursbox__hours {

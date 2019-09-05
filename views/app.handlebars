@@ -42,13 +42,12 @@
   </div>
 </header>
 {{log "HERE IT IS "}}
-{{log businesses}}
 <main class="app-container swiper-container">
   <div class="app-body swiper-wrapper">{{#each businesses}}
     <div class="swiper-slide">
       <div class="jumbotron">
         <div class="jumbotron--container">
-          <div class="jumbotron__photobox" style="overflow-y: scroll">{{#each images}}
+          <div class="jumbotron__photobox" style="overflow-y:visible" data-simplebar>{{#each images}}
             <img id="businessPhoto" class="jumbotron__photobox__photo" src="{{this}}" alt="{{../name}}">{{/each}}
           </div>
           <div class="jumbotron__profilebox">
@@ -61,26 +60,28 @@
             </div>
             <h1 class="jumbotron__profilebox__title">{{name}}</h1>
             <div class="jumbotron__profilebox__link--container">
-              <a class="jumbotron__profilebox__link"
-                href="https://locations.tacobell.com/az/tempe/1801-east-guadalupe.html" target="_blank">Website</a>
+              <a class="jumbotron__profilebox__link" href="{{url}}" target="_blank">Website</a>
             </div>
             <div class="jumbotron__profilebox__address--container">
               <h2 class="jumbotron__profilebox__address-title">
                 Address:
               </h2>
               <div class="jumbotron__profilebox__address">{{#each address}}
-                <p class="addr1">{{this}}</p>{{log this}}{{/each}}
+                <p class="addr1">{{this}}</p>{{/each}}
               </div>
             </div>
             <div class="jumbotron__profilebox__contact--container">
               <h2 class="jumbotron__profilebox__contact-title">
                 Phone:
               </h2>
-              <p class="contact-num">(480) 756-0991</p>
+              <p class="contact-num">{{phone}}</p>
             </div>
           </div>
           <div class="jumbotron__reactionsbox">
-            <div class="reactions--container" data-simplebar>
+            <div class="reactions--container" data-simplebar>{{#each emojis}}
+              <div class="reactions" id="{{name}}" data-index="{{@index}}">{{hex}}
+                <p class="reactions__count">{{count}}</p>
+              </div>{{/each}}
             </div>
           </div>
           <div class="jumbotron__hoursbox">
@@ -89,25 +90,25 @@
             </h2>
             <div class="jumbotron__hoursbox__hours--container">
               <p class="jumbotron__hoursbox__hours" id="monday">
-                Monday: 7:00 AM - 1:00 AM
+                Monday: {{hours/monday/start}} - {{hours/monday/end}}
               </p>
               <p class="jumbotron__hoursbox__hours" id="tuesday">
-                Tuesday: 7:00 AM - 1:00 AM
+                Tuesday: {{hours/tuesday/start}} - {{hours/tuesday/end}}
               </p>
               <p class="jumbotron__hoursbox__hours" id="wednesday">
-                Wednesday: 7:00 AM - 1:00 AM
+                Wednesday: {{hours/wednesday/start}} - {{hours/wednesday/end}}
               </p>
               <p class="jumbotron__hoursbox__hours" id="thursday">
-                Thursday: 7:00 AM - 1:00 AM
+                Thursday: {{hours/thursday/start}} - {{hours/thursday/end}}
               </p>
               <p class="jumbotron__hoursbox__hours" id="friday">
-                Friday: 7:00 AM - 2:00 AM
+                Friday: {{hours/friday/start}} - {{hours/friday/end}}
               </p>
               <p class="jumbotron__hoursbox__hours" id="saturday">
-                Saturday: 7:00 AM - 2:00 AM
+                Saturday: {{hours/saturday/start}} - {{hours/saturday/end}}
               </p>
               <p class="jumbotron__hoursbox__hours" id="sunday">
-                Sunday: 7:00 AM - 1:00 AM
+                Sunday: {{hours/sunday/start}} - {{hours/sunday/end}}
               </p>
             </div>
           </div>
@@ -123,3 +124,24 @@
 
   </div>
 </main>
+{{!-- {{#each businesses}} --}}
+{{!-- <script>
+  let name = "{{businesses}}";
+  console.log(name);
+
+  showEmojies(emojis);
+  function showEmojies(emojiObj) {
+    let i = 0;
+    let emojiHexCode = Object.values(emojiObj);
+    let emojiNames = Object.keys(emojiObj);
+    // console.log(emojiHexCode);
+    // console.log(emojiNames);
+    let $container = $('.reactions--container .simplebar-content');
+    emojiHexCode.forEach(emoji => {
+      let $reaction = $('<div>').addClass('reactions').html(emoji);
+      let $reactionCount = $('<p>').addClass('reactions__count').html();
+      $reaction.append($reactionCount);
+      $container.append($reaction);
+    });
+  }
+</script>{{/each}} --}}

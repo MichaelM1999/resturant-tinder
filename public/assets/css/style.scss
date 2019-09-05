@@ -628,19 +628,19 @@ body {
             box-shadow: 0 0 1.5rem rgba($black, 0.2);
             text-align: right;
             padding: 0 0.5rem 0 0.5rem;
-            height: 95%;
+            min-height: 90%;
 
             &__stars {
                 padding: 0.25rem 0.5rem 0.25rem 0;
 
                 .star {
-                    font-size: 1.65rem;
+                    font-size: 1.35rem;
                     color: #40c3ff;
                 }
             }
 
             &__title {
-                font-size: 2.15rem;
+                font-size: 2.05rem;
                 padding-right: 0.5rem;
                 line-height: 1;
             }
@@ -657,7 +657,7 @@ body {
             &__address,
             &__contact {
                 &--container {
-                    margin: 1rem 0;
+                    margin: .25rem 0;
                     padding-right: 0.5rem;
 
                     .contact-num {
@@ -712,13 +712,17 @@ body {
         &__hoursbox {
             background-color: #3eaf56;
             text-align: right;
-            padding: 0.5rem 1.5rem;
+            margin-top: 1rem;
+            margin-bottom: 1.5rem;
+            padding: .5rem 1.5rem;
             background-color: #ebebdb;
             border-radius: 0.5rem;
             box-shadow: inset 0 0 1.5rem rgba($black, 0.2);
+            max-height: 90%;
 
             &--title {
                 font-size: 1.6rem;
+                margin-top: .5rem;
             }
 
             &__hours {
