@@ -22,7 +22,7 @@ module.exports = (app) => {
     app.get("/app/:location", (req, res) => {
         let location = req.params.location;
         console.log(location);
-        location = location.replace(/ /g, "+").replace(/,/g, "+");
+        location = location.replace(/ /g, "+");
         let detailsArr = [];
         const days = [
             "monday",
