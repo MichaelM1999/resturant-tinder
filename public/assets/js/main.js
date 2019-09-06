@@ -106,6 +106,7 @@ $(function() {
             $("#location")
                 .val()
                 .trim()
+                .replace(/,/g, "")
         );
     });
 
@@ -117,7 +118,6 @@ $(function() {
             btn.removeClass('rotate');
         }, 1000);
     });
-
 });
 
 function getLocation(location) {
