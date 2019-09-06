@@ -24,7 +24,7 @@ require('./routes/html-routes')(app);
 
 
 
-db.sequelize.sync({force: true}).then(() => {
+db.sequelize.sync({force: false}).then(() => {
 // START SERVER
     app.listen(PORT, function() {
     // Log (server-side) when our server has started
