@@ -106,6 +106,7 @@ $(function() {
             $("#location")
                 .val()
                 .trim()
+                .replace(/,/g, "")
         );
     });
 
