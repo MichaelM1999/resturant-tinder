@@ -11,4 +11,5 @@ const sequelize = new Sequelize("sequelize_library", "root", "root", {
     }
 });
 
+
 module.exports = sequelize;

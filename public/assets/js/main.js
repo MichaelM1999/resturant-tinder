@@ -123,5 +123,3 @@ $(function() {
 function getLocation(location) {
     window.location.href = `/app/${location}`;
 }
-
-

@@ -12,7 +12,7 @@
       type: 'city',
     });
     placesAutocomplete.on('change', function resultSelected(e) {
-      document.querySelector('#location').value = e.suggestion.name + ', ' + e.suggestion.administrative || '';
+      document.querySelector('#location').value = e.suggestion.name + e.suggestion.administrative || '';
     });
   })();
 
