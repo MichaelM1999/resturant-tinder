@@ -1,961 +1,141 @@
-<style>
-    * {
-  margin: 0;
-  padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  font-family: brandon-grotesque, sans-serif;
-}
-
-body {
-  position: relative;
-  font-size: 10px;
-  min-height: 100vh;
-  background-color: #e2ecf1;
-  overflow-x: hidden;
-}
-
-/*************************************************************************************************************
-==================================   LANDING PAGE ============================================================
-***************************************************************************************************************/
-.waves .svg-wave {
-  position: absolute;
-}
-
-.logo {
-  font-size: 3.8rem;
-  color: #f0f0f0;
-}
-
-.logo-container {
-  position: absolute;
-  z-index: 100;
-  min-width: 15rem;
-  top: 1.5rem;
-  left: 2.5rem;
-}
-
-.logo .orange-text {
-  position: relative;
-  color: rgba(255, 56, 0, 0.8);
-}
-
-.logo .orange-text::before {
-  content: "";
-  position: absolute;
-  left: 0.25rem;
-  top: 0.25rem;
-  z-index: -1;
-  background-color: #f0f0f0;
-  width: 95%;
-  height: 80%;
-}
-
-.hero {
-  position: absolute;
-  top: 60%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  text-align: center;
-  width: 100%;
-}
-
-.hero__title {
-  font-weight: 400;
-  font-size: 4.6rem;
-  color: rgba(68, 84, 204, 0.8);
-  margin-bottom: -1rem;
-  -webkit-transform: translateX(-100vw);
-          transform: translateX(-100vw);
-  opacity: 0;
-  -webkit-animation: fadeInLeft 1.3s cubic-bezier(0.215, 0.61, 0.355, 1) 0.125s 1 normal forwards;
-          animation: fadeInLeft 1.3s cubic-bezier(0.215, 0.61, 0.355, 1) 0.125s 1 normal forwards;
-}
-
-@-webkit-keyframes fadeInLeft {
-  0% {
-    -webkit-transform: translateX(-100vw);
-            transform: translateX(-100vw);
-    opacity: 0;
-  }
-  45% {
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes fadeInLeft {
-  0% {
-    -webkit-transform: translateX(-100vw);
-            transform: translateX(-100vw);
-    opacity: 0;
-  }
-  45% {
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@-webkit-keyframes fadeInRight {
-  0% {
-    -webkit-transform: translateX(100vw);
-            transform: translateX(100vw);
-    opacity: 0;
-  }
-  45% {
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes fadeInRight {
-  0% {
-    -webkit-transform: translateX(100vw);
-            transform: translateX(100vw);
-    opacity: 0;
-  }
-  45% {
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-.hero__subtitle {
-  font-weight: 700;
-  font-size: 2.52rem;
-  color: #8f8f8f;
-  -webkit-transform: translateX(100vw);
-          transform: translateX(100vw);
-  opacity: 0;
-  -webkit-animation: fadeInRight 1.5s cubic-bezier(0.215, 0.61, 0.355, 1) 0.35s 1 normal forwards;
-          animation: fadeInRight 1.5s cubic-bezier(0.215, 0.61, 0.355, 1) 0.35s 1 normal forwards;
-}
-
-.hero__form {
-  max-width: 35rem;
-  height: 3.75rem;
-  max-height: 10rem;
-  margin: 3rem auto 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  border-radius: 1rem;
-  -webkit-box-shadow: 0 0rem 3rem rgba(25, 25, 31, 0.1);
-          box-shadow: 0 0rem 3rem rgba(25, 25, 31, 0.1);
-}
-
-.hero__form--input, .hero__form--btn {
-  cursor: pointer;
-  font-size: 2.05rem;
-  border: none;
-  padding: 0.95rem 1.4rem;
-  max-height: 3.75rem;
-}
-
-.hero__form--input:focus, .hero__form--btn:focus {
-  outline: none;
-}
-
-.hero__form--link {
-  position: relative;
-  height: 3.75rem;
-}
-
-.hero__form--link .search-icon {
-  position: absolute;
-  z-index: 20;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  font-size: 2rem;
-  color: #ff3800;
-  pointer-events: none;
-  -webkit-transition: 0.25s all ease-out;
-  transition: 0.25s all ease-out;
-}
-
-.hero__form--input {
-  border-top-left-radius: 1rem;
-  border-bottom-left-radius: 1rem;
-  background-color: #f0f0f0;
-  -webkit-transition: 0.5s all ease;
-  transition: 0.5s all ease;
-  height: 100%;
-  -webkit-box-flex: 5;
-      -ms-flex-positive: 5;
-          flex-grow: 5;
-}
-
-.hero__form--input::-webkit-input-placeholder {
-  opacity: 0.5;
-  font-style: italic;
-}
-
-.hero__form--input:-ms-input-placeholder {
-  opacity: 0.5;
-  font-style: italic;
-}
-
-.hero__form--input::-ms-input-placeholder {
-  opacity: 0.5;
-  font-style: italic;
-}
-
-.hero__form--input::placeholder {
-  opacity: 0.5;
-  font-style: italic;
-}
-
-.hero__form--input:focus {
-  background-color: rgba(240, 240, 240, 0.5);
-}
-
-.hero__form--btn {
-  background-color: #f0f0f0;
-  border-top-right-radius: 1rem;
-  border-bottom-right-radius: 1rem;
-  cursor: pointer;
-  font-weight: 700;
-  height: 100%;
-  padding-left: 3.75rem;
-  -webkit-transition: 0.3s all ease;
-  transition: 0.3s all ease;
-}
-
-.hero__form--btn:hover {
-  background-color: #ff3800;
-}
-
-.hero__form--btn:hover + .search-icon {
-  color: rgba(240, 240, 240, 0.5);
-}
-
-.nav-expand {
-  position: fixed;
-  z-index: 9999;
-  top: 1rem;
-  right: 1rem;
-  background-color: #544634;
-  width: 3rem;
-  height: 3rem;
-  border-radius: 50%;
-  -webkit-box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
-          box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
-  cursor: pointer;
-}
-
-.nav-expand .nav-burger {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-}
-
-.nav-expand .nav-burger path {
-  fill: #e1e1e1;
-}
-
-.nav {
-  position: relative;
-  left: 15%;
-  top: 55%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  width: 15rem;
-  text-align: right;
-}
-
-.nav-container {
-  position: fixed;
-  z-index: 200;
-  border-radius: 50%;
-  -webkit-transform: translate(50%, -50%);
-          transform: translate(50%, -50%);
-  top: 2.5rem;
-  right: 2.5rem;
-  height: 45rem;
-  width: 45rem;
-  background-color: #ff3800;
-  background-color: transparent;
-  overflow: hidden;
-  -webkit-clip-path: circle(1.5rem);
-          clip-path: circle(1.5rem);
-  -webkit-transition: 0.7s all;
-  transition: 0.7s all;
-}
-
-.nav-item {
-  position: relative;
-  color: #ebebeb;
-  color: rgba(68, 84, 204, 0.8);
-  text-decoration: none;
-  font-size: 2.5rem;
-  max-width: 100%;
-}
-
-.nav-item::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  left: 0;
-  bottom: 0;
-  height: 0.5rem;
-  width: 0%;
-  background-color: #1e466b;
-  -webkit-transition: 0.3s all;
-  transition: 0.3s all;
-}
-
-.nav-item:hover::before {
-  width: 100%;
-}
-
-/*************************************************************************************************************
-==================================   APP PAGE ============================================================
-***************************************************************************************************************/
-.app-container {
-  position: relative;
-  min-height: 100vh;
-  background-color: rgba(255, 56, 0, 0.85);
-  width: 100vw;
-  margin-left: auto;
-  margin-right: auto;
-  background: linear-gradient(22.5deg, rgba(66, 66, 66, 0.02) 0%, rgba(66, 66, 66, 0.02) 11%, rgba(135, 135, 135, 0.02) 11%, rgba(135, 135, 135, 0.02) 24%, rgba(29, 29, 29, 0.02) 24%, rgba(29, 29, 29, 0.02) 38%, rgba(15, 15, 15, 0.02) 38%, rgba(15, 15, 15, 0.02) 50%, rgba(180, 180, 180, 0.02) 50%, rgba(180, 180, 180, 0.02) 77%, rgba(205, 205, 205, 0.02) 77%, rgba(205, 205, 205, 0.02) 100%), linear-gradient(67.5deg, rgba(10, 10, 10, 0.02) 0%, rgba(10, 10, 10, 0.02) 22%, rgba(52, 52, 52, 0.02) 22%, rgba(52, 52, 52, 0.02) 29%, rgba(203, 203, 203, 0.02) 29%, rgba(203, 203, 203, 0.02) 30%, rgba(69, 69, 69, 0.02) 30%, rgba(69, 69, 69, 0.02) 75%, rgba(231, 231, 231, 0.02) 75%, rgba(231, 231, 231, 0.02) 95%, rgba(138, 138, 138, 0.02) 95%, rgba(138, 138, 138, 0.02) 100%), linear-gradient(112.5deg, rgba(221, 221, 221, 0.02) 0%, rgba(221, 221, 221, 0.02) 17%, rgba(190, 190, 190, 0.02) 17%, rgba(190, 190, 190, 0.02) 39%, rgba(186, 186, 186, 0.02) 39%, rgba(186, 186, 186, 0.02) 66%, rgba(191, 191, 191, 0.02) 66%, rgba(191, 191, 191, 0.02) 68%, rgba(16, 16, 16, 0.02) 68%, rgba(16, 16, 16, 0.02) 70%, rgba(94, 94, 94, 0.02) 70%, rgba(94, 94, 94, 0.02) 100%), linear-gradient(90deg, #f0f0f0, #fff);
-}
-
-.app-container .swiper-button-prev,
-.app-container .swiper-button-next {
-  background-image: none;
-  position: fixed;
-  font-size: 3rem;
-  color: #ff3800;
-}
-
-.app-container .swiper-button-next {
-  right: 2.5rem !important;
-}
-
-.app-container .swiper-button-prev {
-  left: 2.5rem !important;
-}
-
-.header {
-  position: fixed;
-  z-index: 5000;
-  top: 0;
-  width: 100vw;
-  height: 5rem;
-  background-color: rgba(255, 56, 0, 0.5);
-  -webkit-box-shadow: 0 0.4rem 2.4rem rgba(25, 25, 31, 0.3);
-          box-shadow: 0 0.4rem 2.4rem rgba(25, 25, 31, 0.3);
-  border-bottom: 0.2rem #ff6034 solid;
-  -webkit-backdrop-filter: blur(1rem);
-          backdrop-filter: blur(1rem);
-}
-
-.header__filter--container {
-  -webkit-box-flex: 4;
-      -ms-flex-positive: 4;
-          flex-grow: 4;
-  max-width: 40rem;
-  margin: 0;
-  height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-item-align: end;
-      align-self: flex-end;
-}
-
-.header__filter__radio {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  opacity: 0;
-}
-
-.header__filter__radio--label {
-  display: inline-block;
-  cursor: pointer;
-  background-color: rgba(240, 240, 240, 0.99);
-  height: 2.5rem;
-  text-align: center;
-  font-size: 1.05rem;
-  line-height: 0.85;
-  padding: 0.35rem 1.5rem 0.75rem;
-  min-width: 8rem;
-  width: 7.5rem;
-  color: #ff6034;
-  border-radius: 0.15rem;
-  -webkit-box-shadow: 0 0 1.05rem rgba(25, 25, 31, 0.1);
-          box-shadow: 0 0 1.05rem rgba(25, 25, 31, 0.1);
-}
-
-.header__filter__radio--label .mdi {
-  font-size: 1.75rem;
-}
-
-.header__filter__radio--container {
-  height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
-}
-
-.header__filter__submit {
-  position: absolute;
-  right: 0;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  border: none;
-  text-align: center;
-  background-color: #ff6034;
-  color: #f0f0f0;
-  padding: 0.55rem 1.5rem;
-  border-radius: 1.5rem;
-  font-size: 1.1rem;
-  width: 12.5rem;
-  cursor: pointer;
-  -webkit-box-shadow: 0 0.2rem 1.5rem rgba(25, 25, 31, 0.225);
-          box-shadow: 0 0.2rem 1.5rem rgba(25, 25, 31, 0.225);
-  -webkit-transition: 0.35s all ease;
-  transition: 0.35s all ease;
-}
-
-.header__filter__submit:hover {
-  background-color: #f0f0f0;
-  color: #ff6034;
-}
-
-.header__filter__submit--container {
-  margin-right: 1rem;
-  position: relative;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-  -webkit-box-flex: 2;
-      -ms-flex-positive: 2;
-          flex-grow: 2;
-  font-size: 1.3rem;
-  color: #f0f0f0;
-}
-
-.header__filter__submit--container::before {
-  position: absolute;
-  z-index: 1;
-  right: 1rem;
-  top: 50%;
-  -webkit-transform: translate(0, -50%);
-          transform: translate(0, -50%);
-}
-
-.header__filter__submit:focus {
-  outline: none;
-}
-
-.header__content {
-  width: 80%;
-  height: 100%;
-  margin: 0 auto;
-  background-color: rgba(240, 240, 240, 0.05);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.header__form {
-  min-width: 5rem;
-  height: 3.25rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  border-radius: 1rem;
-  -webkit-box-shadow: 0 0.2rem 1.5rem rgba(25, 25, 31, 0.225);
-          box-shadow: 0 0.2rem 1.5rem rgba(25, 25, 31, 0.225);
-  margin-left: 1rem;
-}
-
-.header__form:hover {
-  max-width: 30rem;
-}
-
-.header__form--input, .header__form--btn {
-  cursor: pointer;
-  font-size: 1.7rem;
-  border: none;
-  padding: 0.95rem 1.4rem;
-  max-height: 3.25rem;
-}
-
-.header__form--input:focus, .header__form--btn:focus {
-  outline: none;
-}
-
-.header__form--link {
-  position: relative;
-  height: 3.25rem;
-}
-
-.header__form--link .search-icon {
-  position: absolute;
-  z-index: 20;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  font-size: 1.5rem;
-  color: #ff3800;
-  pointer-events: none;
-  -webkit-transition: 0.25s all ease-out;
-  transition: 0.25s all ease-out;
-}
-
-.header__form--input {
-  border-top-left-radius: 1rem;
-  border-bottom-left-radius: 1rem;
-  background-color: #f0f0f0;
-  -webkit-transition: 0.5s all ease;
-  transition: 0.5s all ease;
-  height: 100%;
-  -webkit-box-flex: 5;
-      -ms-flex-positive: 5;
-          flex-grow: 5;
-  max-width: 5rem;
-  -webkit-transition: .4s all ease;
-  transition: .4s all ease;
-  -webkit-box-shadow: inset 0 0 1rem rgba(25, 25, 31, 0.1);
-          box-shadow: inset 0 0 1rem rgba(25, 25, 31, 0.1);
-}
-
-.header__form--input:hover {
-  max-width: 10rem;
-}
-
-.header__form--input::-webkit-input-placeholder {
-  opacity: 0.5;
-  font-style: italic;
-}
-
-.header__form--input:-ms-input-placeholder {
-  opacity: 0.5;
-  font-style: italic;
-}
-
-.header__form--input::-ms-input-placeholder {
-  opacity: 0.5;
-  font-style: italic;
-}
-
-.header__form--input::placeholder {
-  opacity: 0.5;
-  font-style: italic;
-}
-
-.header__form--input:focus {
-  background-color: rgba(240, 240, 240, 0.5);
-  max-width: 17.5rem;
-}
-
-.header__form--btn {
-  background-color: #f0f0f0;
-  border-top-right-radius: 1rem;
-  border-bottom-right-radius: 1rem;
-  cursor: pointer;
-  font-weight: 700;
-  height: 100%;
-  padding-left: 3.75rem;
-  -webkit-transition: 0.3s all ease;
-  transition: 0.3s all ease;
-}
-
-.header__form--btn:hover {
-  background-color: #ff3800;
-}
-
-.header__form--btn:hover + .search-icon {
-  color: rgba(240, 240, 240, 0.85);
-}
-
-.app-body {
-  min-height: 45rem;
-  max-height: calc(100% - 5rem);
-  padding-top: 7.5rem;
-  padding-bottom: 12.5rem;
-}
-
-.app-body .left-hint {
-  height: 22.5rem;
-  width: 8rem;
-  background-color: rgba(255, 205, 191, 0.746);
-  height: 40rem;
-  max-width: 50rem;
-}
-
-.app-body .right-hint {
-  height: 22.5rem;
-  width: 8rem;
-  background-color: rgba(255, 205, 191, 0.746);
-  height: 40rem;
-  max-width: 50rem;
-}
-
-.app-body .jumbotron {
-  height: 40rem;
-  width: 50rem;
-  margin: 3rem 0 1rem;
-  background-color: #ebebdb;
-  border-radius: 0.25rem;
-  -webkit-box-shadow: 0 0 1rem rgba(25, 25, 31, 0.25);
-          box-shadow: 0 0 1rem rgba(25, 25, 31, 0.25);
-  padding: 0.825rem;
-}
-
-.app-body .jumbotron--container {
-  width: 100%;
-  height: 100%;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 60% 40%;
-      grid-template-columns: 60% 40%;
-  -ms-grid-rows: 55% 45% 10%;
-      grid-template-rows: 55% 45% 10%;
-}
-
-.app-body .jumbotron__photobox, .app-body .jumbotron__profilebox, .app-body .jumbotron__reactionsbox, .app-body .jumbotron__hoursbox {
-  width: 100%;
-  height: 100%;
-}
-
-.app-body .jumbotron__photobox {
-  padding: 0 0.5rem 0.5rem 0;
-  overflow: hidden;
-  border-radius: 0.3rem;
-}
-
-.app-body .jumbotron__photobox__photo {
-  min-height: 100%;
-  max-width: 100%;
-  border-radius: 0.3rem;
-}
-
-.app-body .jumbotron__profilebox {
-  background-color: #ebebdb;
-  border-radius: 0.5rem;
-  -webkit-box-shadow: 0 0 1.5rem rgba(25, 25, 31, 0.2);
-          box-shadow: 0 0 1.5rem rgba(25, 25, 31, 0.2);
-  text-align: right;
-  padding: 0 0.5rem 0 0.5rem;
-  height: 95%;
-}
-
-.app-body .jumbotron__profilebox__stars {
-  padding: 0.25rem 0.5rem 0.25rem 0;
-}
-
-.app-body .jumbotron__profilebox__stars .star {
-  font-size: 1.65rem;
-  color: #40c3ff;
-}
-
-.app-body .jumbotron__profilebox__title {
-  font-size: 2.15rem;
-  padding-right: 0.5rem;
-  line-height: 1;
-}
-
-.app-body .jumbotron__profilebox__link {
-  font-size: 1.35rem;
-  color: #3dade0;
-}
-
-.app-body .jumbotron__profilebox__link--container {
-  padding-right: 0.5rem;
-}
-
-.app-body .jumbotron__profilebox__address--container, .app-body .jumbotron__profilebox__contact--container {
-  margin: 1rem 0;
-  padding-right: 0.5rem;
-}
-
-.app-body .jumbotron__profilebox__address--container .contact-num, .app-body .jumbotron__profilebox__contact--container .contact-num {
-  font-size: 1.15rem;
-}
-
-.app-body .jumbotron__profilebox__address-title, .app-body .jumbotron__profilebox__contact-title {
-  font-size: 1.6rem;
-}
-
-.app-body .jumbotron__profilebox__address .addr1,
-.app-body .jumbotron__profilebox__address .addr2, .app-body .jumbotron__profilebox__contact .addr1,
-.app-body .jumbotron__profilebox__contact .addr2 {
-  font-size: 1.15rem;
-}
-
-.app-body .jumbotron__reactionsbox {
-  padding: 1rem 1rem 1rem 0;
-  position: relative;
-}
-
-.app-body .jumbotron__reactionsbox .reactions {
-  display: inline-block;
-  margin: 0 auto;
-  font-size: 3.125rem;
-  padding: 0.25rem 0.4rem;
-  cursor: pointer;
-}
-
-.app-body .jumbotron__reactionsbox .reactions__count {
-  font-size: 2rem;
-  text-align: center;
-  line-height: 0.8;
-  margin-top: -0.5rem;
-  margin-bottom: 0.5rem;
-  color: #f0f0f0;
-}
-
-.app-body .jumbotron__reactionsbox .reactions--container {
-  width: 100%;
-  height: 100%;
-  background-color: #ff6034;
-  border-radius: 0.3rem;
-  -webkit-box-shadow: inset 0 0 2rem rgba(25, 25, 31, 0.5);
-          box-shadow: inset 0 0 2rem rgba(25, 25, 31, 0.5);
-  padding: 0.25rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.app-body .jumbotron__hoursbox {
-  background-color: #3eaf56;
-  text-align: right;
-  padding: 0.5rem 1.5rem;
-  background-color: #ebebdb;
-  border-radius: 0.5rem;
-  -webkit-box-shadow: inset 0 0 1.5rem rgba(25, 25, 31, 0.2);
-          box-shadow: inset 0 0 1.5rem rgba(25, 25, 31, 0.2);
-}
-
-.app-body .jumbotron__hoursbox--title {
-  font-size: 1.6rem;
-}
-
-.app-body .jumbotron__hoursbox__hours {
-  font-size: 1.05rem;
-}
-
-.full-circle {
-  -webkit-clip-path: circle(100%);
-          clip-path: circle(100%);
-}
-
-.ap-input {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-}
-
-.ap-icon-pin {
-  display: none;
-}
-
-.ap-suggestion {
-  font-size: 1.25rem;
-}
-
-.ap-icon-clear {
-  cursor: pointer;
-}
-
-.scroll-box {
-  min-height: 100%;
-  width: 100%;
-}
-
-.swiper-slide {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-</style>
-
-
+<div class="nav-expand">
+  <svg class="nav-burger" style="width:24px;height:24px" viewBox="0 0 24 24">
+    <path fill="#e1e1e1" d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" />
+  </svg>
+</div>
+<div class="nav-container">
+  <nav class="nav">
+    <a href="#skills" class="nav-item">How It Works</a>
+    <a href="#contact" class="nav-item">Contact</a>
+  </nav>
+</div>
 <header class="header">
-    <div class="header__content">
-        <form class="header__form search__form">
-            <input placeholder="City, State, or Zip Code" type="text" name="location" id="location"
-                class="header__form--input">
-            <a href="#" class="header__form--link"><input type="submit" id="Btn" class="header__form--btn" value=""><i
-                    class="search-icon fas fa-search-location"></i></a>
-        </form>
-        <div class="header__filter--container">
-            <div class="header__filter__radio--container">
-                <input type="radio" name="filter" id="Category" class="header__filter__radio">
-                <label for="Category" class="header__filter__radio--label">Category
-                    <div class="mdi mdi-menu-down"></div>
-                </label>
-            </div>
-            <div class="header__filter__radio--container">
-                <input type="radio" name="filter" id="Price" class="header__filter__radio">
-                <label for="Price" class="header__filter__radio--label">Price
-                    <div class="mdi mdi-menu-down"></div>
-                </label>
-            </div>
-            <div class="header__filter__radio--container">
-                <input type="radio" name="filter" id="Rating" class="header__filter__radio">
-                <label for="Rating" class="header__filter__radio--label">Rating
-                    <div class="mdi mdi-menu-down"></div>
-                </label>
-            </div>
-            <div class="header__filter__submit--container mdi mdi-filter"><input type="button" value="Filter Results"
-                    class="header__filter__submit" id="filterResults"></div>
-        </div>
+  <div class="header__content">
+    <form class="header__form search__form">
+      <input placeholder="City, State, or Zip Code" type="text" name="location" id="location"
+        class="header__form--input">
+      <a href="#" class="header__form--link"><input type="submit" id="Btn" class="header__form--btn" value=""><i
+          class="search-icon fas fa-search-location"></i></a>
+    </form>
+    <div class="header__filter--container">
+      <div class="header__filter__radio--container">
+        <input type="radio" name="filter" id="Category" class="header__filter__radio">
+        <label for="Category" class="header__filter__radio--label">Category
+          <div class="mdi mdi-menu-down"></div>
+        </label>
+      </div>
+      <div class="header__filter__radio--container">
+        <input type="radio" name="filter" id="Price" class="header__filter__radio">
+        <label for="Price" class="header__filter__radio--label">Price
+          <div class="mdi mdi-menu-down"></div>
+        </label>
+      </div>
+      <div class="header__filter__radio--container">
+        <input type="radio" name="filter" id="Rating" class="header__filter__radio">
+        <label for="Rating" class="header__filter__radio--label">Rating
+          <div class="mdi mdi-menu-down"></div>
+        </label>
+      </div>
+      <div class="header__filter__submit--container mdi mdi-filter"><input type="button" value="Filter Results"
+          class="header__filter__submit" id="filterResults"></div>
     </div>
+  </div>
 </header>
 {{log "HERE IT IS "}}
-{{log businesses}}
 <main class="app-container swiper-container">
-    <div class="app-body swiper-wrapper">
-        <div class="swiper-slide">{{#each businesses}}
-            <div class="jumbotron">
-                <div class="jumbotron--container">
-                    <div class="jumbotron__photobox">{{#each images}}
-                        <img id="businessPhoto" class="jumbotron__photobox__photo" src=`{{this}}`
-                            alt="{{../name}}">{{/each}}
-                    </div>
-                    <div class="jumbotron__profilebox">
-                        <div class="jumbotron__profilebox__stars">
-                            <span class="star mdi mdi-star"></span>
-                            <span class="star mdi mdi-star"></span>
-                            <span class="star mdi mdi-star"></span>
-                            <span class="star mdi mdi-star"></span>
-                            <span class="star mdi mdi-star"></span>
-                        </div>
-                        <h1 class="jumbotron__profilebox__title">{{name}}</h1>
-                        <div class="jumbotron__profilebox__link--container">
-                            <a class="jumbotron__profilebox__link"
-                                href="https://locations.tacobell.com/az/tempe/1801-east-guadalupe.html"
-                                target="_blank">Website</a>
-                        </div>
-                        <div class="jumbotron__profilebox__address--container">
-                            <h2 class="jumbotron__profilebox__address-title">
-                                Address:
-                            </h2>
-                            <div class="jumbotron__profilebox__address">{{#each address}}
-                                <p class="addr1">{{this}}</p>{{log this}}{{/each}}
-                            </div>
-                        </div>
-                        <div class="jumbotron__profilebox__contact--container">
-                            <h2 class="jumbotron__profilebox__contact-title">
-                                Phone:
-                            </h2>
-                            <p class="contact-num">(480) 756-0991</p>
-                        </div>
-                    </div>
-                    <div class="jumbotron__reactionsbox">
-                        <div class="reactions--container" data-simplebar>
-                        </div>
-                    </div>
-                    <div class="jumbotron__hoursbox">
-                        <h2 class="jumbotron__hoursbox--title">
-                            Hours of Operation:
-                        </h2>
-                        <div class="jumbotron__hoursbox__hours--container">
-                            <p class="jumbotron__hoursbox__hours" id="monday">
-                                Monday: 7:00 AM - 1:00 AM
-                            </p>
-                            <p class="jumbotron__hoursbox__hours" id="tuesday">
-                                Tuesday: 7:00 AM - 1:00 AM
-                            </p>
-                            <p class="jumbotron__hoursbox__hours" id="wednesday">
-                                Wednesday: 7:00 AM - 1:00 AM
-                            </p>
-                            <p class="jumbotron__hoursbox__hours" id="thursday">
-                                Thursday: 7:00 AM - 1:00 AM
-                            </p>
-                            <p class="jumbotron__hoursbox__hours" id="friday">
-                                Friday: 7:00 AM - 2:00 AM
-                            </p>
-                            <p class="jumbotron__hoursbox__hours" id="saturday">
-                                Saturday: 7:00 AM - 2:00 AM
-                            </p>
-                            <p class="jumbotron__hoursbox__hours" id="sunday">
-                                Sunday: 7:00 AM - 1:00 AM
-                            </p>
-                        </div>
-                    </div>
-                </div>
+  <div class="app-body swiper-wrapper">{{#each businesses}}
+    <div class="swiper-slide">
+      <div class="jumbotron">
+        <div class="jumbotron--container">
+          <div class="jumbotron__photobox" style="overflow-y:visible" data-simplebar>{{#each images}}
+            <img id="businessPhoto" class="jumbotron__photobox__photo" src="{{this}}" alt="{{../name}}">{{/each}}
+          </div>
+          <div class="jumbotron__profilebox">
+            <div class="jumbotron__profilebox__stars">
+              <span class="star mdi mdi-star"></span>
+              <span class="star mdi mdi-star"></span>
+              <span class="star mdi mdi-star"></span>
+              <span class="star mdi mdi-star"></span>
+              <span class="star mdi mdi-star"></span>
             </div>
-            {{/each}}</div>
+            <h1 class="jumbotron__profilebox__title">{{name}}</h1>
+            <p class="price">{{price}}</p>
+            <div class="jumbotron__profilebox__link--container">
+              <a class="jumbotron__profilebox__link" href="{{url}}" target="_blank">Website</a>
+            </div>
+            <div class="jumbotron__profilebox__address--container">
+              <h2 class="jumbotron__profilebox__address-title">
+                Address:
+              </h2>
+              <div class="jumbotron__profilebox__address">{{#each address}}
+                <p class="addr1">{{this}}</p>{{/each}}
+              </div>
+            </div>
+            <div class="jumbotron__profilebox__contact--container">
+              <h2 class="jumbotron__profilebox__contact-title">
+                Phone:
+              </h2>
+              <p class="contact-num">{{phone}}</p>
+            </div>
+          </div>
+          <div class="jumbotron__reactionsbox">
+            <div class="reactions--container" data-simplebar>{{#each emojis}}
+              <div class="reactions" id="{{name}}" data-index="{{@index}}" data-clicked="false" data-id="{{../id}}">{{hex}}
+                <p class="reactions__count">{{count}}</p>
+              </div>{{/each}}
+            </div>
+          </div>
+          <div class="jumbotron__hoursbox">
+            <h2 class="jumbotron__hoursbox--title">
+              Hours of Operation:
+            </h2>
+            <div class="jumbotron__hoursbox__hours--container">
+              <p class="jumbotron__hoursbox__hours" id="monday">
+                Monday: {{hours/monday/start}} - {{hours/monday/end}}
+              </p>
+              <p class="jumbotron__hoursbox__hours" id="tuesday">
+                Tuesday: {{hours/tuesday/start}} - {{hours/tuesday/end}}
+              </p>
+              <p class="jumbotron__hoursbox__hours" id="wednesday">
+                Wednesday: {{hours/wednesday/start}} - {{hours/wednesday/end}}
+              </p>
+              <p class="jumbotron__hoursbox__hours" id="thursday">
+                Thursday: {{hours/thursday/start}} - {{hours/thursday/end}}
+              </p>
+              <p class="jumbotron__hoursbox__hours" id="friday">
+                Friday: {{hours/friday/start}} - {{hours/friday/end}}
+              </p>
+              <p class="jumbotron__hoursbox__hours" id="saturday">
+                Saturday: {{hours/saturday/start}} - {{hours/saturday/end}}
+              </p>
+              <p class="jumbotron__hoursbox__hours" id="sunday">
+                Sunday: {{hours/sunday/start}} - {{hours/sunday/end}}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>{{/each}}
 
-    </div>
-    <div class="swiper-button-prev mdi mdi-arrow-left">
+  </div>
 
-    </div>
-    <div class="swiper-button-next mdi mdi-arrow-right">
-
-    </div>
 </main>
+<div class="swiper-button-prev mdi mdi-arrow-left arrow-btn">
+
+</div>
+<div class="swiper-button-next mdi mdi-arrow-right arrow-btn">
+
+</div>
+{{!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> --}}
+{{!-- <script src="http://localhost:3000/assets/js/algolia.js"></script> --}}
+
+{{!-- <script>
+  $(".header__form").on("submit", function (e) {
+    e.preventDefault();
+    getLocation(
+      $("#location")
+        .val()
+        .trim()
+    );
+  });
+</script> --}}
