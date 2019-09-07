@@ -37,6 +37,8 @@ $(function() {
         "Food Court",
         "Hawaiian"
     ];
+    localStorage.setItem("offset", 0);
+    // let ;
 
     // EXPAND /RETRACT MENU
     $(".nav-expand").click(e => {
@@ -72,8 +74,7 @@ $(function() {
             }).then(() => {
                 console.log("it's been updated!");
                 countContainer.text(count);
-
-            })
+            });
             // $.put("/api/countUpdate", emojiData, () => {
             // })
         }
@@ -84,11 +85,16 @@ $(function() {
         // Optional parameters
         direction: "horizontal",
         centeredSlides: true,
-        loop: true,
+        // loop: true,
         effect: "coverflow",
-        speed: 700,
+        coverflowEffect: {
+            slideShadows: false,
+            depth: 300,
+            modifier: 1.5
+        },
+        speed: 1000,
         resistence: false,
-        resistenceRatio: 0.5,
+        resistenceRatio: 0.125,
         grabCursor: true,
 
         //   // Navigation arrows
@@ -102,6 +108,7 @@ $(function() {
 
     $(".search__form").on("submit", function(e) {
         e.preventDefault();
+        localStorage.setItem("area", $("#location").val().trim());
         getLocation(
             $("#location")
                 .val()
@@ -110,13 +117,20 @@ $(function() {
     });
 
     $('.arrow-btn').click(function (e) { 
+        e.preventDefault();
         let btn = $(this);
-        btn.addClass('rotate');
 
+        btn.addClass('rotate');
         setTimeout(() => {
             btn.removeClass('rotate');
         }, 1000);
+
+        checkIfLast();
     });
+
+    mySwiper.on('slideChangeTransitionStart sliderMove', () => {
+        checkIfLast();
+    })
 
 });
 
@@ -124,4 +138,20 @@ function getLocation(location) {
     window.location.href = `/app/${location}`;
 }
 
+function showMoreData() {
+    let offset = parseInt(localStorage.offset);
+    let location = localStorage.area;
+    offset += 3;
+    console.log(offset);
+    localStorage.setItem("offset", offset);
 
+    window.location.href = `/app/${location}/${offset}`;
+}
+
+function checkIfLast() {
+    if (document.getElementsByClassName('swiper-slide-next').length === 0) {
+        console.log("No More Slides!");
+        $('.swiper-button-next').removeClass('swiper-button-disabled');
+        showMoreData();
+    }
+}

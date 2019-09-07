@@ -29,6 +29,7 @@ body {
 .waves {
     .svg-wave {
         position: absolute;
+        width: 110%;
     }
 }
 
@@ -39,9 +40,20 @@ body {
     &-container {
         position: absolute;
         z-index: 100;
-        min-width: 15rem;
+        min-width: 8rem;
         top: 1.5rem;
         left: 2.5rem;
+
+        &-app {
+            position: fixed;
+            z-index: 50000;
+            top: 0.75em;
+            left: 0.5rem;
+            opacity: 0.7;
+            .logo {
+                font-size: 2.8rem;
+            }
+        }
     }
 
     .orange-text {
@@ -123,8 +135,8 @@ body {
     }
 
     &__form {
-        max-width: 35rem;
-        height: 3.75rem;
+        max-width: 45rem;
+        height: 4.5rem;
         max-height: 10rem;
         margin: 3rem auto 0;
         display: flex;
@@ -139,7 +151,7 @@ body {
             font-size: 2.05rem;
             border: none;
             padding: 0.95rem 1.4rem;
-            max-height: 3.75rem;
+            max-height: 4.5rem;
 
             &:focus {
                 outline: none;
@@ -150,7 +162,7 @@ body {
             position: relative;
             // max-height: 10rem;
             // min-height: 4.8rem;
-            height: 3.75rem;
+            height: 4.5rem;
 
             .search-icon {
                 position: absolute;
@@ -208,7 +220,7 @@ body {
 
 .nav-expand {
     position: fixed;
-    z-index: 9999;
+    z-index: 100000000001;
     top: 1rem;
     right: 1rem;
     background-color: $brown;
@@ -220,17 +232,20 @@ body {
     cursor: pointer;
 
     .nav-burger {
+        z-index: 100000000001;
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
 
         path {
+            z-index: 100000000001;
             fill: #e1e1e1;
         }
     }
 }
 .nav {
+    z-index: 100000000001;
     position: relative;
     left: 15%;
     top: 55%;
@@ -239,6 +254,7 @@ body {
     width: 15rem;
     text-align: right;
     &-container {
+        z-index: 100000000001;
         position: fixed;
         z-index: 200;
         border-radius: 50%;
@@ -283,6 +299,38 @@ body {
     }
 }
 
+@media only screen and (max-width: 1000px) {
+    .waves {
+        .svg-wave {
+            width: 130%;
+        }
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .waves {
+        .svg-wave {
+            width: 160%;
+        }
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .waves {
+        .svg-wave {
+            width: 200%;
+        }
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .waves {
+        .svg-wave {
+            width: 350%;
+        }
+    }
+}
+
 /*************************************************************************************************************
 ==================================   APP PAGE ============================================================
 ***************************************************************************************************************/
@@ -294,55 +342,54 @@ body {
     margin-left: auto;
     margin-right: auto;
     background: linear-gradient(
-        22.5deg,
-        rgba(66, 66, 66, 0.02) 0%,
-        rgba(66, 66, 66, 0.02) 11%,
-        rgba(135, 135, 135, 0.02) 11%,
-        rgba(135, 135, 135, 0.02) 24%,
-        rgba(29, 29, 29, 0.02) 24%,
-        rgba(29, 29, 29, 0.02) 38%,
-        rgba(15, 15, 15, 0.02) 38%,
-        rgba(15, 15, 15, 0.02) 50%,
-        rgba(180, 180, 180, 0.02) 50%,
-        rgba(180, 180, 180, 0.02) 77%,
-        rgba(205, 205, 205, 0.02) 77%,
-        rgba(205, 205, 205, 0.02) 100%
-    ),
-    linear-gradient(
-        67.5deg,
-        rgba(10, 10, 10, 0.02) 0%,
-        rgba(10, 10, 10, 0.02) 22%,
-        rgba(52, 52, 52, 0.02) 22%,
-        rgba(52, 52, 52, 0.02) 29%,
-        rgba(203, 203, 203, 0.02) 29%,
-        rgba(203, 203, 203, 0.02) 30%,
-        rgba(69, 69, 69, 0.02) 30%,
-        rgba(69, 69, 69, 0.02) 75%,
-        rgba(231, 231, 231, 0.02) 75%,
-        rgba(231, 231, 231, 0.02) 95%,
-        rgba(138, 138, 138, 0.02) 95%,
-        rgba(138, 138, 138, 0.02) 100%
-    ),
-    linear-gradient(
-        112.5deg,
-        rgba(221, 221, 221, 0.02) 0%,
-        rgba(221, 221, 221, 0.02) 17%,
-        rgba(190, 190, 190, 0.02) 17%,
-        rgba(190, 190, 190, 0.02) 39%,
-        rgba(186, 186, 186, 0.02) 39%,
-        rgba(186, 186, 186, 0.02) 66%,
-        rgba(191, 191, 191, 0.02) 66%,
-        rgba(191, 191, 191, 0.02) 68%,
-        rgba(16, 16, 16, 0.02) 68%,
-        rgba(16, 16, 16, 0.02) 70%,
-        rgba(94, 94, 94, 0.02) 70%,
-        rgba(94, 94, 94, 0.02) 100%
-    ),
-    linear-gradient(90deg, $white, #fff);
+            22.5deg,
+            rgba(66, 66, 66, 0.02) 0%,
+            rgba(66, 66, 66, 0.02) 11%,
+            rgba(135, 135, 135, 0.02) 11%,
+            rgba(135, 135, 135, 0.02) 24%,
+            rgba(29, 29, 29, 0.02) 24%,
+            rgba(29, 29, 29, 0.02) 38%,
+            rgba(15, 15, 15, 0.02) 38%,
+            rgba(15, 15, 15, 0.02) 50%,
+            rgba(180, 180, 180, 0.02) 50%,
+            rgba(180, 180, 180, 0.02) 77%,
+            rgba(205, 205, 205, 0.02) 77%,
+            rgba(205, 205, 205, 0.02) 100%
+        ),
+        linear-gradient(
+            67.5deg,
+            rgba(10, 10, 10, 0.02) 0%,
+            rgba(10, 10, 10, 0.02) 22%,
+            rgba(52, 52, 52, 0.02) 22%,
+            rgba(52, 52, 52, 0.02) 29%,
+            rgba(203, 203, 203, 0.02) 29%,
+            rgba(203, 203, 203, 0.02) 30%,
+            rgba(69, 69, 69, 0.02) 30%,
+            rgba(69, 69, 69, 0.02) 75%,
+            rgba(231, 231, 231, 0.02) 75%,
+            rgba(231, 231, 231, 0.02) 95%,
+            rgba(138, 138, 138, 0.02) 95%,
+            rgba(138, 138, 138, 0.02) 100%
+        ),
+        linear-gradient(
+            112.5deg,
+            rgba(221, 221, 221, 0.02) 0%,
+            rgba(221, 221, 221, 0.02) 17%,
+            rgba(190, 190, 190, 0.02) 17%,
+            rgba(190, 190, 190, 0.02) 39%,
+            rgba(186, 186, 186, 0.02) 39%,
+            rgba(186, 186, 186, 0.02) 66%,
+            rgba(191, 191, 191, 0.02) 66%,
+            rgba(191, 191, 191, 0.02) 68%,
+            rgba(16, 16, 16, 0.02) 68%,
+            rgba(16, 16, 16, 0.02) 70%,
+            rgba(94, 94, 94, 0.02) 70%,
+            rgba(94, 94, 94, 0.02) 100%
+        ),
+        linear-gradient(90deg, $white, #fff);
 
     .swiper-button-prev,
     .swiper-button-next {
-
         position: fixed;
         font-size: 3rem;
         color: $orange;
@@ -399,14 +446,14 @@ body {
                 border-radius: 0.15rem;
                 // border-bottom: 0.2rem $brown solid;
                 box-shadow: 0 0 1.05rem rgba($black, 0.1);
-                transition: .25s all ease-in;
+                transition: 0.25s all ease-in;
 
                 .mdi {
                     font-size: 1.75rem;
                 }
 
                 &:hover {
-                    background-color: rgba($white,1);
+                    background-color: rgba($white, 1);
                     color: $orange-light;
                 }
             }
@@ -469,7 +516,7 @@ body {
         background-color: rgba($white, 0.05);
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: center;
     }
 
     &__form {
@@ -523,13 +570,13 @@ body {
             transition: 0.5s all ease;
             height: 100%;
             flex-grow: 5;
-            max-width: 5rem;
-            transition: .4s all ease;
+            max-width: 50rem;
+            transition: 0.4s all ease;
             box-shadow: inset 0 0 1rem rgba($black, 0.1);
 
-            &:hover {
-                max-width: 10rem;
-            }
+            // &:hover {
+            //     max-width: 10rem;
+            // }
 
             &::placeholder {
                 opacity: 0.5;
@@ -538,12 +585,12 @@ body {
 
             &:focus {
                 background-color: rgba($white, 0.5);
-                max-width: 17.5rem;
+                // max-width: 17.5rem;
             }
 
             #Btn:active &--input {
                 background-color: rgba($white, 0.5);
-                max-width: 17.5rem;
+                // max-width: 17.5rem;
             }
         }
 
@@ -576,8 +623,8 @@ body {
     padding-bottom: 0rem;
 
     .jumbotron {
-        height: 37.5rem;
-        width: 57.5rem;
+        height: 42.5rem;
+        width: 65rem;
         margin: 3rem 0 1rem;
         background-color: #ebebdb;
         border-radius: 0.25rem;
@@ -602,14 +649,13 @@ body {
         }
 
         &__photobox {
-            padding: 0 .5rem 0.5rem 0;
+            padding: 0 0.5rem 0.5rem 0;
             margin-left: auto;
             max-width: 95%;
             margin-right: 1rem;
             overflow: hidden;
             border-radius: 0.3rem;
-            box-shadow:inset 0 0 1.5rem rgba($black, 0.4);
-
+            box-shadow: inset 0 0 1.5rem rgba($black, 0.4);
 
             &__photo {
                 min-height: 100%;
@@ -628,10 +674,10 @@ body {
 
             .price {
                 position: absolute;
-                top: .325rem;
-                left: .75rem;
+                top: 0.325rem;
+                left: 0.75rem;
                 font-size: 1.45rem;
-                color: rgba($orange, .7);
+                color: rgba($orange, 0.7);
             }
 
             &__stars {
@@ -647,6 +693,7 @@ body {
                 font-size: 2.05rem;
                 padding-right: 0.5rem;
                 line-height: 1;
+                padding-top: .5rem;
             }
 
             &__link {
@@ -661,7 +708,7 @@ body {
             &__address,
             &__contact {
                 &--container {
-                    margin: .25rem 0;
+                    margin: 0.25rem 0;
                     padding-right: 0.5rem;
 
                     .contact-num {
@@ -718,7 +765,7 @@ body {
             text-align: right;
             margin-top: 1rem;
             margin-bottom: 1.5rem;
-            padding: .5rem 1.5rem;
+            padding: 0.5rem 1.5rem;
             background-color: #ebebdb;
             border-radius: 0.5rem;
             box-shadow: inset 0 0 1.5rem rgba($black, 0.2);
@@ -726,7 +773,7 @@ body {
 
             &--title {
                 font-size: 1.6rem;
-                margin-top: .5rem;
+                margin-top: 0.5rem;
             }
 
             &__hours {
@@ -739,7 +786,9 @@ body {
 // utilities
 
 .full-circle {
-    clip-path: circle(100%);
+    clip-path: circle(80%);
+    background-color: #3dade0;
+    z-index: 10000000000;
 }
 
 .ap-input {
@@ -777,7 +826,7 @@ body {
     position: fixed;
     top: auto;
     bottom: 3rem;
-    content: '';
+    content: "";
     background-image: none !important;
 
     &:focus,
@@ -786,12 +835,11 @@ body {
     }
 
     &::before {
-
         border-radius: 50%;
-        padding: .75rem;
+        padding: 0.75rem;
         font-size: 2.25rem;
         position: fixed;
-        box-shadow: 0 .25rem 2rem rgba($black, 0.3);
+        box-shadow: 0 0.25rem 2rem rgba($black, 0.3);
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
@@ -813,10 +861,12 @@ body {
 }
 
 .rotate {
-    animation: rotateRight 1s cubic-bezier(0.785, 0.135, 0.15, 0.86) 1 forwards;
+    animation: rotateRight 0.7s cubic-bezier(0.785, 0.135, 0.15, 0.86) 1
+        forwards;
 
     &::before {
-        animation: invertColor 1s cubic-bezier(0.785, 0.135, 0.15, 0.86) 1 forwards;
+        animation: invertColor 0.7s cubic-bezier(0.785, 0.135, 0.15, 0.86) 1
+            forwards;
     }
 }
 
@@ -848,5 +898,362 @@ body {
     100% {
         background-color: $orange;
         color: $white;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .app-body {
+        min-height: 50rem;
+        max-height: calc(100% - 5rem);
+        padding-top: 7.5rem;
+        padding-bottom: 0rem;
+
+        .jumbotron {
+            height: 45rem;
+            width: 57.5rem;
+            margin: 3rem 0 1rem;
+            background-color: #ebebdb;
+            border-radius: 0.25rem;
+            box-shadow: 0 0 1rem rgba($black, 0.25);
+            // background-color: #1e466b;
+            padding: 0.5rem;
+            margin: 2rem;
+        }
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .app-body {
+        min-height: 70rem;
+        max-height: calc(100% - 5rem);
+        padding-top: 7.5rem;
+        padding-bottom: 0rem;
+
+        .jumbotron {
+            height: 65rem;
+            width: 57.5rem;
+            margin: 3rem 0 1rem;
+            background-color: #ebebdb;
+            border-radius: 0.25rem;
+            box-shadow: 0 0 1rem rgba($black, 0.25);
+            // background-color: #1e466b;
+            padding: 0.5rem;
+            margin: 2rem;
+
+            &--container {
+                width: 100%;
+                height: 100%;
+                display: grid;
+                grid-template-columns: 100%;
+                grid-template-rows: 25% 30% 25% 30%;
+            }
+
+            &__photobox,
+            &__profilebox,
+            &__reactionsbox,
+            &__hoursbox {
+                width: 100%;
+                height: 100%;
+            }
+    
+            &__photobox {
+                padding: 0 0.5rem 0.5rem 0;
+                margin-left: auto;
+                margin-right: 1rem;
+                overflow: hidden;
+                border-radius: 0.3rem;
+                box-shadow: inset 0 0 1.5rem rgba($black, 0.4);
+    
+                &__photo {
+                    min-height: 100%;
+                    max-width: 100%;
+                    border-radius: 0.3rem;
+                }
+            }
+            &__profilebox {
+                position: relative;
+                background-color: #ebebdb;
+                border-radius: 0.5rem;
+                box-shadow: 0 0 1.5rem rgba($black, 0.2);
+                text-align: center;
+                padding: 0 0.5rem 0 0.5rem;
+                min-height: 90%;
+    
+                .price {
+                    position: absolute;
+                    top: 0.325rem;
+                    left: 0.75rem;
+                    font-size: 1.45rem;
+                    color: rgba($orange, 0.7);
+                }
+    
+                &__stars {
+                    padding: 0.25rem 0.5rem 0.25rem 0;
+    
+                    .star {
+                        font-size: 1.35rem;
+                        color: #40c3ff;
+                    }
+                }
+    
+                &__title {
+                    font-size: 2.05rem;
+                    padding-right: 0.5rem;
+                    line-height: 1;
+                }
+    
+                &__link {
+                    font-size: 1.35rem;
+                    color: #3dade0;
+    
+                    &--container {
+                        padding-right: 0.5rem;
+                    }
+                }
+    
+                &__address,
+                &__contact {
+                    &--container {
+                        margin: 0.25rem 0;
+                        padding-right: 0.5rem;
+    
+                        .contact-num {
+                            font-size: 1.15rem;
+                        }
+                    }
+    
+                    &-title {
+                        font-size: 1.6rem;
+                    }
+    
+                    .addr1,
+                    .addr2 {
+                        font-size: 1.15rem;
+                    }
+                }
+            }
+            &__reactionsbox {
+                padding: 1rem 1rem 1rem 0;
+                position: relative;
+    
+                .reactions {
+                    display: inline-block;
+                    margin: 0 auto;
+                    font-size: 3.125rem;
+                    padding: 0.25rem 0.4rem;
+                    cursor: pointer;
+    
+                    &__count {
+                        font-size: 2rem;
+                        text-align: center;
+                        line-height: 0.8;
+                        margin-top: -0.5rem;
+                        margin-bottom: 0.5rem;
+                        color: $white;
+                    }
+                    &--container {
+                        width: 100%;
+                        height: 100%;
+                        background-color: $orange-light;
+                        border-radius: 0.3rem;
+                        box-shadow: inset 0 0 2rem rgba($black, 0.5);
+                        padding: 0.25rem;
+                        display: flex;
+                        flex-wrap: wrap;
+                        align-items: flex-start;
+                        justify-content: center;
+                        // overflow-y: scroll;
+                    }
+                }
+            }
+            &__hoursbox {
+                background-color: #3eaf56;
+                text-align: center;
+                margin-top: 1rem;
+                margin-bottom: 1.5rem;
+                padding: 0.5rem 1.5rem;
+                background-color: #ebebdb;
+                border-radius: 0.5rem;
+                box-shadow: inset 0 0 1.5rem rgba($black, 0.2);
+                max-height: 90%;
+    
+                &--title {
+                    font-size: 1.6rem;
+                    margin-top: 0.5rem;
+                }
+    
+                &__hours {
+                    font-size: 1.05rem;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .app-body {
+        min-height: 70rem;
+        max-height: calc(100% - 5rem);
+        padding-top: 7.5rem;
+        padding-bottom: 0rem;
+
+        .jumbotron {
+            height: 65rem;
+            width: 57.5rem;
+            margin: 3rem 0 1rem;
+            background-color: #ebebdb;
+            border-radius: 0.25rem;
+            box-shadow: 0 0 1rem rgba($black, 0.25);
+            // background-color: #1e466b;
+            padding: 0.5rem;
+            margin: 2rem;
+
+            &--container {
+                width: 100%;
+                height: 100%;
+                display: grid;
+                grid-template-columns: 100%;
+                grid-template-rows: 25% 30% 25% 30%;
+            }
+
+            &__photobox,
+            &__profilebox,
+            &__reactionsbox,
+            &__hoursbox {
+                width: 100%;
+                height: 100%;
+            }
+    
+            &__photobox {
+                padding: 0 0.5rem 0.5rem 0;
+                margin-left: auto;
+                margin-right: 1rem;
+                overflow: hidden;
+                border-radius: 0.3rem;
+                box-shadow: inset 0 0 1.5rem rgba($black, 0.4);
+    
+                &__photo {
+                    min-height: 100%;
+                    max-width: 100%;
+                    border-radius: 0.3rem;
+                }
+            }
+            &__profilebox {
+                position: relative;
+                background-color: #ebebdb;
+                border-radius: 0.5rem;
+                box-shadow: 0 0 1.5rem rgba($black, 0.2);
+                text-align: center;
+                padding: 0 0.5rem 0 0.5rem;
+                min-height: 90%;
+    
+                .price {
+                    position: absolute;
+                    top: 17rem;
+                    left: 0.75rem;
+                    font-size: 1.45rem;
+                    color: rgba($orange, 0.7);
+                }
+    
+                &__stars {
+                    padding: 0.25rem 0.5rem 0.25rem 0;
+    
+                    .star {
+                        font-size: 1.35rem;
+                        color: #40c3ff;
+                    }
+                }
+    
+                &__title {
+                    font-size: 2.05rem;
+                    padding-right: 0.5rem;
+                    line-height: 1;
+                }
+    
+                &__link {
+                    font-size: 1.35rem;
+                    color: #3dade0;
+    
+                    &--container {
+                        padding-right: 0.5rem;
+                    }
+                }
+    
+                &__address,
+                &__contact {
+                    &--container {
+                        margin: 0.25rem 0;
+                        padding-right: 0.5rem;
+    
+                        .contact-num {
+                            font-size: 1.15rem;
+                        }
+                    }
+    
+                    &-title {
+                        font-size: 1.6rem;
+                    }
+    
+                    .addr1,
+                    .addr2 {
+                        font-size: 1.15rem;
+                    }
+                }
+            }
+            &__reactionsbox {
+                padding: 1rem 1rem 1rem 0;
+                position: relative;
+    
+                .reactions {
+                    display: inline-block;
+                    margin: 0 auto;
+                    font-size: 3.125rem;
+                    padding: 0.25rem 0.4rem;
+                    cursor: pointer;
+    
+                    &__count {
+                        font-size: 2rem;
+                        text-align: center;
+                        line-height: 0.8;
+                        margin-top: -0.5rem;
+                        margin-bottom: 0.5rem;
+                        color: $white;
+                    }
+                    &--container {
+                        width: 100%;
+                        height: 100%;
+                        background-color: $orange-light;
+                        border-radius: 0.3rem;
+                        box-shadow: inset 0 0 2rem rgba($black, 0.5);
+                        padding: 0.25rem;
+                        display: flex;
+                        flex-wrap: wrap;
+                        align-items: flex-start;
+                        justify-content: center;
+                        // overflow-y: scroll;
+                    }
+                }
+            }
+            &__hoursbox {
+                background-color: #3eaf56;
+                text-align: center;
+                margin-top: 1rem;
+                margin-bottom: 1.5rem;
+                padding: 0.5rem 1.5rem;
+                background-color: #ebebdb;
+                border-radius: 0.5rem;
+                box-shadow: inset 0 0 1.5rem rgba($black, 0.2);
+                max-height: 90%;
+    
+                &--title {
+                    font-size: 1.6rem;
+                    margin-top: 0.5rem;
+                }
+    
+                &__hours {
+                    font-size: 1.05rem;
+                }
+            }
+        }
     }
 }

@@ -1,13 +1,16 @@
-<div class="nav-expand">
+{{!-- <div class="nav-expand">
   <svg class="nav-burger" style="width:24px;height:24px" viewBox="0 0 24 24">
     <path fill="#e1e1e1" d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" />
   </svg>
-</div>
-<div class="nav-container">
+</div> --}}
+{{!-- <div class="nav-container">
   <nav class="nav">
     <a href="#skills" class="nav-item">How It Works</a>
     <a href="#contact" class="nav-item">Contact</a>
   </nav>
+</div> --}}
+<div class="logo-container logo-container-app">
+    <h3 class="logo">Pic<span class="orange-text">ki</span></h3>
 </div>
 <header class="header">
   <div class="header__content">
@@ -17,7 +20,7 @@
       <a href="#" class="header__form--link"><input type="submit" id="Btn" class="header__form--btn" value=""><i
           class="search-icon fas fa-search-location"></i></a>
     </form>
-    <div class="header__filter--container">
+    {{!-- <div class="header__filter--container">
       <div class="header__filter__radio--container">
         <input type="radio" name="filter" id="Category" class="header__filter__radio">
         <label for="Category" class="header__filter__radio--label">Category
@@ -37,7 +40,7 @@
         </label>
       </div>
       <div class="header__filter__submit--container mdi mdi-filter"><input type="button" value="Filter Results"
-          class="header__filter__submit" id="filterResults"></div>
+          class="header__filter__submit" id="filterResults"></div> --}}
     </div>
   </div>
 </header>
@@ -51,13 +54,13 @@
             <img id="businessPhoto" class="jumbotron__photobox__photo" src="{{this}}" alt="{{../name}}">{{/each}}
           </div>
           <div class="jumbotron__profilebox">
-            <div class="jumbotron__profilebox__stars">
+            {{!-- <div class="jumbotron__profilebox__stars">
               <span class="star mdi mdi-star"></span>
               <span class="star mdi mdi-star"></span>
               <span class="star mdi mdi-star"></span>
               <span class="star mdi mdi-star"></span>
               <span class="star mdi mdi-star"></span>
-            </div>
+            </div> --}}
             <h1 class="jumbotron__profilebox__title">{{name}}</h1>
             <p class="price">{{price}}</p>
             <div class="jumbotron__profilebox__link--container">
