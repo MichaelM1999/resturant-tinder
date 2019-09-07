@@ -16,9 +16,3 @@
     });
   })();
 
-  
-
-// $('#location').on('keyup', function (e) { 
-//   console.log($('.ap-dataset-places').children().html());
-// });
-

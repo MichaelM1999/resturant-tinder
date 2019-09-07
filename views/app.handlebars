@@ -1,519 +1,144 @@
+{{!-- <div class="nav-expand">
+  <svg class="nav-burger" style="width:24px;height:24px" viewBox="0 0 24 24">
+    <path fill="#e1e1e1" d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" />
+  </svg>
+</div> --}}
+{{!-- <div class="nav-container">
+  <nav class="nav">
+    <a href="#skills" class="nav-item">How It Works</a>
+    <a href="#contact" class="nav-item">Contact</a>
+  </nav>
+</div> --}}
+<div class="logo-container logo-container-app">
+    <h3 class="logo">Pic<span class="orange-text">ki</span></h3>
+</div>
 <header class="header">
-    <div class="header__content">
-        <form class="header__form search__form">
-            <input placeholder="City, State, or Zip Code" type="text" name="location" id="location"
-                class="header__form--input">
-            <a href="#" class="header__form--link"><input type="submit" id="Btn" class="header__form--btn" value=""><i
-                    class="search-icon fas fa-search-location"></i></a>
-        </form>
-        <div class="header__filter--container">
-            <div class="header__filter__radio--container">
-                <input type="radio" name="filter" id="Category" class="header__filter__radio">
-                <label for="Category" class="header__filter__radio--label">Category
-                    <div class="mdi mdi-menu-down"></div>
-                </label>
-            </div>
-            <div class="header__filter__radio--container">
-                <input type="radio" name="filter" id="Price" class="header__filter__radio">
-                <label for="Price" class="header__filter__radio--label">Price
-                    <div class="mdi mdi-menu-down"></div>
-                </label>
-            </div>
-            <div class="header__filter__radio--container">
-                <input type="radio" name="filter" id="Rating" class="header__filter__radio">
-                <label for="Rating" class="header__filter__radio--label">Rating
-                    <div class="mdi mdi-menu-down"></div>
-                </label>
-            </div>
-            <div class="header__filter__submit--container mdi mdi-filter"><input type="button" value="Filter Results"
-                    class="header__filter__submit" id="filterResults"></div>
-        </div>
+  <div class="header__content">
+    <form class="header__form search__form">
+      <input placeholder="City, State, or Zip Code" type="text" name="location" id="location"
+        class="header__form--input">
+      <a href="#" class="header__form--link"><input type="submit" id="Btn" class="header__form--btn" value=""><i
+          class="search-icon fas fa-search-location"></i></a>
+    </form>
+    {{!-- <div class="header__filter--container">
+      <div class="header__filter__radio--container">
+        <input type="radio" name="filter" id="Category" class="header__filter__radio">
+        <label for="Category" class="header__filter__radio--label">Category
+          <div class="mdi mdi-menu-down"></div>
+        </label>
+      </div>
+      <div class="header__filter__radio--container">
+        <input type="radio" name="filter" id="Price" class="header__filter__radio">
+        <label for="Price" class="header__filter__radio--label">Price
+          <div class="mdi mdi-menu-down"></div>
+        </label>
+      </div>
+      <div class="header__filter__radio--container">
+        <input type="radio" name="filter" id="Rating" class="header__filter__radio">
+        <label for="Rating" class="header__filter__radio--label">Rating
+          <div class="mdi mdi-menu-down"></div>
+        </label>
+      </div>
+      <div class="header__filter__submit--container mdi mdi-filter"><input type="button" value="Filter Results"
+          class="header__filter__submit" id="filterResults"></div> --}}
     </div>
+  </div>
 </header>
+{{log "HERE IT IS "}}
 <main class="app-container swiper-container">
-    <div class="app-body swiper-wrapper">
-        {{!-- <div class="left-hint swiper-slide">
-
-        </div> --}}
-        <div class="swiper-slide">
-            <div class="jumbotron">
-                <div class="jumbotron--container">
-                    <div class="jumbotron__photobox">
-                        <img id="businessPhoto" class="jumbotron__photobox__photo" src="assets/media/tacobell.jpg"
-                            alt="Taco Bell">
-                    </div>
-                    <div class="jumbotron__profilebox">
-                        <div class="jumbotron__profilebox__stars">
-                            <span class="star mdi mdi-star"></span>
-                            <span class="star mdi mdi-star"></span>
-                            <span class="star mdi mdi-star"></span>
-                            <span class="star mdi mdi-star"></span>
-                            <span class="star mdi mdi-star"></span>
-                        </div>
-                        <h1 class="jumbotron__profilebox__title">Taco Bell</h1>
-                        <div class="jumbotron__profilebox__link--container">
-                            <a class="jumbotron__profilebox__link"
-                                href="https://locations.tacobell.com/az/tempe/1801-east-guadalupe.html"
-                                target="_blank">Website</a>
-                        </div>
-                        <div class="jumbotron__profilebox__address--container">
-                            <h2 class="jumbotron__profilebox__address-title">
-                                Address:
-                            </h2>
-                            <div class="jumbotron__profilebox__address">
-                                <p class="addr1">1801 East Guadalupe</p>
-                                <p class="addr2">Tempe, AZ 85283</p>
-                            </div>
-                        </div>
-                        <div class="jumbotron__profilebox__contact--container">
-                            <h2 class="jumbotron__profilebox__contact-title">
-                                Phone:
-                            </h2>
-                            <p class="contact-num">(480) 756-0991</p>
-                        </div>
-                    </div>
-                    <div class="jumbotron__reactionsbox">
-                        <div class="reactions--container" data-simplebar>
-                            <div class="reactions">&#x1F639;
-                                <p class="reactions__count">175</p>
-                            </div>
-                            <div class="reactions">&#x1F639;
-                                <p class="reactions__count">175</p>
-                            </div>
-                            <div class="reactions">&#x1F639;
-                                <p class="reactions__count">175</p>
-                            </div>
-                            <div class="reactions">&#x1F639;
-                                <p class="reactions__count">175</p>
-                            </div>
-                            <div class="reactions">&#x1F639;
-                                <p class="reactions__count">175</p>
-                            </div>
-                            <div class="reactions">&#x1F639;
-                                <p class="reactions__count">175</p>
-                            </div>
-                            <div class="reactions">&#x1F639;
-                                <p class="reactions__count">175</p>
-                            </div>
-                            <div class="reactions">&#x1F639;
-                                <p class="reactions__count">175</p>
-                            </div>
-                            <div class="reactions">&#x1F639;
-                                <p class="reactions__count">175</p>
-                            </div>
-                            <div class="reactions">&#x1F639;
-                                <p class="reactions__count">175</p>
-                            </div>
-                            <div class="reactions">&#x1F639;
-                                <p class="reactions__count">175</p>
-                            </div>
-                            <div class="reactions">&#x1F639;
-                                <p class="reactions__count">175</p>
-                            </div>
-                            <div class="reactions">&#x1F639;
-                                <p class="reactions__count">175</p>
-                            </div>
-                            <div class="reactions">&#x1F639;
-                                <p class="reactions__count">175</p>
-                            </div>
-                            <div class="reactions">&#x1F639;
-                                <p class="reactions__count">175</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="jumbotron__hoursbox">
-                        <h2 class="jumbotron__hoursbox--title">
-                            Hours of Operation:
-                        </h2>
-                        <div class="jumbotron__hoursbox__hours--container">
-                            <p class="jumbotron__hoursbox__hours" id="monday">
-                                Monday: 7:00 AM - 1:00 AM
-                            </p>
-                            <p class="jumbotron__hoursbox__hours" id="tuesday">
-                                Tuesday: 7:00 AM - 1:00 AM
-                            </p>
-                            <p class="jumbotron__hoursbox__hours" id="wednesday">
-                                Wednesday: 7:00 AM - 1:00 AM
-                            </p>
-                            <p class="jumbotron__hoursbox__hours" id="thursday">
-                                Thursday: 7:00 AM - 1:00 AM
-                            </p>
-                            <p class="jumbotron__hoursbox__hours" id="friday">
-                                Friday: 7:00 AM - 2:00 AM
-                            </p>
-                            <p class="jumbotron__hoursbox__hours" id="saturday">
-                                Saturday: 7:00 AM - 2:00 AM
-                            </p>
-                            <p class="jumbotron__hoursbox__hours" id="sunday">
-                                Sunday: 7:00 AM - 1:00 AM
-                            </p>
-                        </div>
-                    </div>
-                </div>
+  <div class="app-body swiper-wrapper">{{#each businesses}}
+    <div class="swiper-slide">
+      <div class="jumbotron">
+        <div class="jumbotron--container">
+          <div class="jumbotron__photobox" style="overflow-y:visible" data-simplebar>{{#each images}}
+            <img id="businessPhoto" class="jumbotron__photobox__photo" src="{{this}}" alt="{{../name}}">{{/each}}
+          </div>
+          <div class="jumbotron__profilebox">
+            {{!-- <div class="jumbotron__profilebox__stars">
+              <span class="star mdi mdi-star"></span>
+              <span class="star mdi mdi-star"></span>
+              <span class="star mdi mdi-star"></span>
+              <span class="star mdi mdi-star"></span>
+              <span class="star mdi mdi-star"></span>
+            </div> --}}
+            <h1 class="jumbotron__profilebox__title">{{name}}</h1>
+            <p class="price">{{price}}</p>
+            <div class="jumbotron__profilebox__link--container">
+              <a class="jumbotron__profilebox__link" href="{{url}}" target="_blank">Website</a>
             </div>
-        </div>
-        <div class="swiper-slide">
-            <div class="jumbotron">
-                <div class="jumbotron--container">
-                    <div class="jumbotron__photobox">
-                        <img id="businessPhoto" class="jumbotron__photobox__photo" src="assets/media/tacobell.jpg"
-                            alt="Taco Bell">
-                    </div>
-                    <div class="jumbotron__profilebox">
-                        <div class="jumbotron__profilebox__stars">
-                            <span class="star mdi mdi-star"></span>
-                            <span class="star mdi mdi-star"></span>
-                            <span class="star mdi mdi-star"></span>
-                            <span class="star mdi mdi-star"></span>
-                            <span class="star mdi mdi-star"></span>
-                        </div>
-                        <h1 class="jumbotron__profilebox__title">Denny's</h1>
-                        <div class="jumbotron__profilebox__link--container">
-                            <a class="jumbotron__profilebox__link"
-                                href="https://locations.tacobell.com/az/tempe/1801-east-guadalupe.html"
-                                target="_blank">Website</a>
-                        </div>
-                        <div class="jumbotron__profilebox__address--container">
-                            <h2 class="jumbotron__profilebox__address-title">
-                                Address:
-                            </h2>
-                            <div class="jumbotron__profilebox__address">
-                                <p class="addr1">1801 East Guadalupe</p>
-                                <p class="addr2">Tempe, AZ 85283</p>
-                            </div>
-                        </div>
-                        <div class="jumbotron__profilebox__contact--container">
-                            <h2 class="jumbotron__profilebox__contact-title">
-                                Phone:
-                            </h2>
-                            <p class="contact-num">(480) 756-0991</p>
-                        </div>
-                    </div>
-                    <div class="jumbotron__reactionsbox">
-                        <div class="reactions--container" data-simplebar>
-                            <div class="reactions">&#x1F639;
-                                <p class="reactions__count">175</p>
-                            </div>
-                            <div class="reactions">&#x1F639;
-                                <p class="reactions__count">175</p>
-                            </div>
-                            <div class="reactions">&#x1F639;
-                                <p class="reactions__count">175</p>
-                            </div>
-                            <div class="reactions">&#x1F639;
-                                <p class="reactions__count">175</p>
-                            </div>
-                            <div class="reactions">&#x1F639;
-                                <p class="reactions__count">175</p>
-                            </div>
-                            <div class="reactions">&#x1F639;
-                                <p class="reactions__count">175</p>
-                            </div>
-                            <div class="reactions">&#x1F639;
-                                <p class="reactions__count">175</p>
-                            </div>
-                            <div class="reactions">&#x1F639;
-                                <p class="reactions__count">175</p>
-                            </div>
-                            <div class="reactions">&#x1F639;
-                                <p class="reactions__count">175</p>
-                            </div>
-                            <div class="reactions">&#x1F639;
-                                <p class="reactions__count">175</p>
-                            </div>
-                            <div class="reactions">&#x1F639;
-                                <p class="reactions__count">175</p>
-                            </div>
-                            <div class="reactions">&#x1F639;
-                                <p class="reactions__count">175</p>
-                            </div>
-                            <div class="reactions">&#x1F639;
-                                <p class="reactions__count">175</p>
-                            </div>
-                            <div class="reactions">&#x1F639;
-                                <p class="reactions__count">175</p>
-                            </div>
-                            <div class="reactions">&#x1F639;
-                                <p class="reactions__count">175</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="jumbotron__hoursbox">
-                        <h2 class="jumbotron__hoursbox--title">
-                            Hours of Operation:
-                        </h2>
-                        <div class="jumbotron__hoursbox__hours--container">
-                            <p class="jumbotron__hoursbox__hours" id="monday">
-                                Monday: 7:00 AM - 1:00 AM
-                            </p>
-                            <p class="jumbotron__hoursbox__hours" id="tuesday">
-                                Tuesday: 7:00 AM - 1:00 AM
-                            </p>
-                            <p class="jumbotron__hoursbox__hours" id="wednesday">
-                                Wednesday: 7:00 AM - 1:00 AM
-                            </p>
-                            <p class="jumbotron__hoursbox__hours" id="thursday">
-                                Thursday: 7:00 AM - 1:00 AM
-                            </p>
-                            <p class="jumbotron__hoursbox__hours" id="friday">
-                                Friday: 7:00 AM - 2:00 AM
-                            </p>
-                            <p class="jumbotron__hoursbox__hours" id="saturday">
-                                Saturday: 7:00 AM - 2:00 AM
-                            </p>
-                            <p class="jumbotron__hoursbox__hours" id="sunday">
-                                Sunday: 7:00 AM - 1:00 AM
-                            </p>
-                        </div>
-                    </div>
-                </div>
+            <div class="jumbotron__profilebox__address--container">
+              <h2 class="jumbotron__profilebox__address-title">
+                Address:
+              </h2>
+              <div class="jumbotron__profilebox__address">{{#each address}}
+                <p class="addr1">{{this}}</p>{{/each}}
+              </div>
             </div>
-        </div>
-        <div class="swiper-slide">
-            <div class="jumbotron">
-                <div class="jumbotron--container">
-                    <div class="jumbotron__photobox">
-                        <img id="businessPhoto" class="jumbotron__photobox__photo" src="assets/media/tacobell.jpg"
-                            alt="Taco Bell">
-                    </div>
-                    <div class="jumbotron__profilebox">
-                        <div class="jumbotron__profilebox__stars">
-                            <span class="star mdi mdi-star"></span>
-                            <span class="star mdi mdi-star"></span>
-                            <span class="star mdi mdi-star"></span>
-                            <span class="star mdi mdi-star"></span>
-                            <span class="star mdi mdi-star"></span>
-                        </div>
-                        <h1 class="jumbotron__profilebox__title">Burger King</h1>
-                        <div class="jumbotron__profilebox__link--container">
-                            <a class="jumbotron__profilebox__link"
-                                href="https://locations.tacobell.com/az/tempe/1801-east-guadalupe.html"
-                                target="_blank">Website</a>
-                        </div>
-                        <div class="jumbotron__profilebox__address--container">
-                            <h2 class="jumbotron__profilebox__address-title">
-                                Address:
-                            </h2>
-                            <div class="jumbotron__profilebox__address">
-                                <p class="addr1">1801 East Guadalupe</p>
-                                <p class="addr2">Tempe, AZ 85283</p>
-                            </div>
-                        </div>
-                        <div class="jumbotron__profilebox__contact--container">
-                            <h2 class="jumbotron__profilebox__contact-title">
-                                Phone:
-                            </h2>
-                            <p class="contact-num">(480) 756-0991</p>
-                        </div>
-                    </div>
-                    <div class="jumbotron__reactionsbox">
-                        <div class="reactions--container" data-simplebar>
-                            <div class="reactions">&#x1F639;
-                                <p class="reactions__count">175</p>
-                            </div>
-                            <div class="reactions">&#x1F639;
-                                <p class="reactions__count">175</p>
-                            </div>
-                            <div class="reactions">&#x1F639;
-                                <p class="reactions__count">175</p>
-                            </div>
-                            <div class="reactions">&#x1F639;
-                                <p class="reactions__count">175</p>
-                            </div>
-                            <div class="reactions">&#x1F639;
-                                <p class="reactions__count">175</p>
-                            </div>
-                            <div class="reactions">&#x1F639;
-                                <p class="reactions__count">175</p>
-                            </div>
-                            <div class="reactions">&#x1F639;
-                                <p class="reactions__count">175</p>
-                            </div>
-                            <div class="reactions">&#x1F639;
-                                <p class="reactions__count">175</p>
-                            </div>
-                            <div class="reactions">&#x1F639;
-                                <p class="reactions__count">175</p>
-                            </div>
-                            <div class="reactions">&#x1F639;
-                                <p class="reactions__count">175</p>
-                            </div>
-                            <div class="reactions">&#x1F639;
-                                <p class="reactions__count">175</p>
-                            </div>
-                            <div class="reactions">&#x1F639;
-                                <p class="reactions__count">175</p>
-                            </div>
-                            <div class="reactions">&#x1F639;
-                                <p class="reactions__count">175</p>
-                            </div>
-                            <div class="reactions">&#x1F639;
-                                <p class="reactions__count">175</p>
-                            </div>
-                            <div class="reactions">&#x1F639;
-                                <p class="reactions__count">175</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="jumbotron__hoursbox">
-                        <h2 class="jumbotron__hoursbox--title">
-                            Hours of Operation:
-                        </h2>
-                        <div class="jumbotron__hoursbox__hours--container">
-                            <p class="jumbotron__hoursbox__hours" id="monday">
-                                Monday: 7:00 AM - 1:00 AM
-                            </p>
-                            <p class="jumbotron__hoursbox__hours" id="tuesday">
-                                Tuesday: 7:00 AM - 1:00 AM
-                            </p>
-                            <p class="jumbotron__hoursbox__hours" id="wednesday">
-                                Wednesday: 7:00 AM - 1:00 AM
-                            </p>
-                            <p class="jumbotron__hoursbox__hours" id="thursday">
-                                Thursday: 7:00 AM - 1:00 AM
-                            </p>
-                            <p class="jumbotron__hoursbox__hours" id="friday">
-                                Friday: 7:00 AM - 2:00 AM
-                            </p>
-                            <p class="jumbotron__hoursbox__hours" id="saturday">
-                                Saturday: 7:00 AM - 2:00 AM
-                            </p>
-                            <p class="jumbotron__hoursbox__hours" id="sunday">
-                                Sunday: 7:00 AM - 1:00 AM
-                            </p>
-                        </div>
-                    </div>
-                </div>
+            <div class="jumbotron__profilebox__contact--container">
+              <h2 class="jumbotron__profilebox__contact-title">
+                Phone:
+              </h2>
+              <p class="contact-num">{{phone}}</p>
             </div>
-        </div>
-        <div class="swiper-slide">
-            <div class="jumbotron">
-                <div class="jumbotron--container">
-                    <div class="jumbotron__photobox">
-                        <img id="businessPhoto" class="jumbotron__photobox__photo" src="assets/media/tacobell.jpg"
-                            alt="Taco Bell">
-                    </div>
-                    <div class="jumbotron__profilebox">
-                        <div class="jumbotron__profilebox__stars">
-                            <span class="star mdi mdi-star"></span>
-                            <span class="star mdi mdi-star"></span>
-                            <span class="star mdi mdi-star"></span>
-                            <span class="star mdi mdi-star"></span>
-                            <span class="star mdi mdi-star"></span>
-                        </div>
-                        <h1 class="jumbotron__profilebox__title">McDonalds</h1>
-                        <div class="jumbotron__profilebox__link--container">
-                            <a class="jumbotron__profilebox__link"
-                                href="https://locations.tacobell.com/az/tempe/1801-east-guadalupe.html"
-                                target="_blank">Website</a>
-                        </div>
-                        <div class="jumbotron__profilebox__address--container">
-                            <h2 class="jumbotron__profilebox__address-title">
-                                Address:
-                            </h2>
-                            <div class="jumbotron__profilebox__address">
-                                <p class="addr1">1801 East Guadalupe</p>
-                                <p class="addr2">Tempe, AZ 85283</p>
-                            </div>
-                        </div>
-                        <div class="jumbotron__profilebox__contact--container">
-                            <h2 class="jumbotron__profilebox__contact-title">
-                                Phone:
-                            </h2>
-                            <p class="contact-num">(480) 756-0991</p>
-                        </div>
-                    </div>
-                    <div class="jumbotron__reactionsbox">
-                        <div class="reactions--container" data-simplebar>
-                            <div class="reactions">&#x1F639;
-                                <p class="reactions__count">175</p>
-                            </div>
-                            <div class="reactions">&#x1F639;
-                                <p class="reactions__count">175</p>
-                            </div>
-                            <div class="reactions">&#x1F639;
-                                <p class="reactions__count">175</p>
-                            </div>
-                            <div class="reactions">&#x1F639;
-                                <p class="reactions__count">175</p>
-                            </div>
-                            <div class="reactions">&#x1F639;
-                                <p class="reactions__count">175</p>
-                            </div>
-                            <div class="reactions">&#x1F639;
-                                <p class="reactions__count">175</p>
-                            </div>
-                            <div class="reactions">&#x1F639;
-                                <p class="reactions__count">175</p>
-                            </div>
-                            <div class="reactions">&#x1F639;
-                                <p class="reactions__count">175</p>
-                            </div>
-                            <div class="reactions">&#x1F639;
-                                <p class="reactions__count">175</p>
-                            </div>
-                            <div class="reactions">&#x1F639;
-                                <p class="reactions__count">175</p>
-                            </div>
-                            <div class="reactions">&#x1F639;
-                                <p class="reactions__count">175</p>
-                            </div>
-                            <div class="reactions">&#x1F639;
-                                <p class="reactions__count">175</p>
-                            </div>
-                            <div class="reactions">&#x1F639;
-                                <p class="reactions__count">175</p>
-                            </div>
-                            <div class="reactions">&#x1F639;
-                                <p class="reactions__count">175</p>
-                            </div>
-                            <div class="reactions">&#x1F639;
-                                <p class="reactions__count">175</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="jumbotron__hoursbox">
-                        <h2 class="jumbotron__hoursbox--title">
-                            Hours of Operation:
-                        </h2>
-                        <div class="jumbotron__hoursbox__hours--container">
-                            <p class="jumbotron__hoursbox__hours" id="monday">
-                                Monday: 7:00 AM - 1:00 AM
-                            </p>
-                            <p class="jumbotron__hoursbox__hours" id="tuesday">
-                                Tuesday: 7:00 AM - 1:00 AM
-                            </p>
-                            <p class="jumbotron__hoursbox__hours" id="wednesday">
-                                Wednesday: 7:00 AM - 1:00 AM
-                            </p>
-                            <p class="jumbotron__hoursbox__hours" id="thursday">
-                                Thursday: 7:00 AM - 1:00 AM
-                            </p>
-                            <p class="jumbotron__hoursbox__hours" id="friday">
-                                Friday: 7:00 AM - 2:00 AM
-                            </p>
-                            <p class="jumbotron__hoursbox__hours" id="saturday">
-                                Saturday: 7:00 AM - 2:00 AM
-                            </p>
-                            <p class="jumbotron__hoursbox__hours" id="sunday">
-                                Sunday: 7:00 AM - 1:00 AM
-                            </p>
-                        </div>
-                    </div>
-                </div>
+          </div>
+          <div class="jumbotron__reactionsbox">
+            <div class="reactions--container" data-simplebar>{{#each emojis}}
+              <div class="reactions" id="{{name}}" data-index="{{@index}}" data-clicked="false" data-id="{{../id}}">{{hex}}
+                <p class="reactions__count">{{count}}</p>
+              </div>{{/each}}
             </div>
+          </div>
+          <div class="jumbotron__hoursbox">
+            <h2 class="jumbotron__hoursbox--title">
+              Hours of Operation:
+            </h2>
+            <div class="jumbotron__hoursbox__hours--container">
+              <p class="jumbotron__hoursbox__hours" id="monday">
+                Monday: {{hours/monday/start}} - {{hours/monday/end}}
+              </p>
+              <p class="jumbotron__hoursbox__hours" id="tuesday">
+                Tuesday: {{hours/tuesday/start}} - {{hours/tuesday/end}}
+              </p>
+              <p class="jumbotron__hoursbox__hours" id="wednesday">
+                Wednesday: {{hours/wednesday/start}} - {{hours/wednesday/end}}
+              </p>
+              <p class="jumbotron__hoursbox__hours" id="thursday">
+                Thursday: {{hours/thursday/start}} - {{hours/thursday/end}}
+              </p>
+              <p class="jumbotron__hoursbox__hours" id="friday">
+                Friday: {{hours/friday/start}} - {{hours/friday/end}}
+              </p>
+              <p class="jumbotron__hoursbox__hours" id="saturday">
+                Saturday: {{hours/saturday/start}} - {{hours/saturday/end}}
+              </p>
+              <p class="jumbotron__hoursbox__hours" id="sunday">
+                Sunday: {{hours/sunday/start}} - {{hours/sunday/end}}
+              </p>
+            </div>
+          </div>
         </div>
+      </div>
+    </div>{{/each}}
 
+  </div>
 
-
-        {{!-- <div class="right-hint swiper-slide">
-
-        </div> --}}
-    </div>
-    <div class="swiper-button-prev mdi mdi-arrow-left">
-
-    </div>
-    <div class="swiper-button-next mdi mdi-arrow-right">
-
-    </div>
 </main>
+<div class="swiper-button-prev mdi mdi-arrow-left arrow-btn">
+
+</div>
+<div class="swiper-button-next mdi mdi-arrow-right arrow-btn">
+
+</div>
+{{!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> --}}
+{{!-- <script src="http://localhost:3000/assets/js/algolia.js"></script> --}}
+
+{{!-- <script>
+  $(".header__form").on("submit", function (e) {
+    e.preventDefault();
+    getLocation(
+      $("#location")
+        .val()
+        .trim()
+    );
+  });
+</script> --}}
